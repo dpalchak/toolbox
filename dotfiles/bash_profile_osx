@@ -1,0 +1,20 @@
+
+# added by Anaconda 2.0.1 installer
+export PATH="/Applications/anaconda/bin:$PATH"
+
+##
+# Your previous /Users/palchak/.bash_profile file was backed up as /Users/palchak/.bash_profile.macports-saved_2014-12-14_at_20:46:34
+##
+
+# MacPorts Installer addition on 2014-12-14_at_20:46:34: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+#Exit now if this is not an interactive session
+[ -z "$PS1" ] && return
+
+export LESSOPEN='| /opt/local/bin/lesspipe.sh %s'
+
+. ~/.bash_aliases
+. ~/.bash_user_functions
+

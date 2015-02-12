@@ -1,0 +1,11 @@
+#Exit now if this is not an interactive session
+[ -z "$PS1" ] && return
+
+alias ls="ls -F"
+alias ll="ls -lFh"
+alias la="ls -laFh"
+
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
