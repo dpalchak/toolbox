@@ -1,0 +1,18 @@
+# Common settings for all Unisons
+
+
+# Backup options
+backuplocation = local
+backupprefix = .unison_backup/$VERSION.
+backupsuffix = 
+
+# Paths to ignore
+ignore = Path */.git
+ignore = Name *~
+ignore = Name .*~
+ignore = Name *.o
+ignore = Name *.tmp
+ignore = Name temp.*
+ignore = Name .*
+ignore = Name *.bak
+ignore = Path */.unison_backup
