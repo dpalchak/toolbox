@@ -16,5 +16,5 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export LESSOPEN='| /opt/local/bin/lesspipe.sh %s'
 
 . ~/.bash_aliases
-. ~/.bash_user_functions
+. ~/.bash_functions
 
