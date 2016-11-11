@@ -9,3 +9,5 @@ alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+alias kate="kate 2>&1 1>/dev/null"
