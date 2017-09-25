@@ -15,3 +15,6 @@ alias kate="kate 2>&1 1>/dev/null"
 alias lsdfu="dfu-util -l"
 alias lscoppa="lsusb -d 18d1:"
 
+alias g2="cd ~/GEN2"
+alias envsetup="source ~/GEN2/build/envsetup.sh"
+
