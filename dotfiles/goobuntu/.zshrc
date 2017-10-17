@@ -5,6 +5,7 @@
 # functions, options, key bindings, etc.
 #
 
+
 # source profile like .bashrc
 if [ -f /etc/profile ]; then
 	source /etc/profile
@@ -16,16 +17,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory autocd extendedglob
-
-#Bindkeys based on $EDITOR
-bindkey -v
-
-# Who doesn't want home and end to work?
-bindkey '\e[1~' beginning-of-line
-bindkey '\e[4~' end-of-line
-
-# Use standard ctrl+R for history search
-bindkey '^R' history-incremental-search-backward
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -49,6 +40,18 @@ prompt sorin
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' users
+
+
+#Bindkeys based on $EDITOR
+bindkey -v
+
+# Who doesn't want home and end to work?
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
+
+# Use standard ctrl+R for history search
+bindkey '^R' history-incremental-search-backward
+
 
 export MAKEFLAGS="-j"
 
