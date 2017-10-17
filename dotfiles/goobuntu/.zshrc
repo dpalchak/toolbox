@@ -18,11 +18,14 @@ SAVEHIST=10000
 setopt appendhistory autocd extendedglob
 
 #Bindkeys based on $EDITOR
-bindkey -e
+bindkey -v
 
 # Who doesn't want home and end to work?
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
+
+# Use standard ctrl+R for history search
+bindkey '^R' history-incremental-search-backward
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -40,6 +43,12 @@ fi
 # Customize to your needs...
 
 prompt sorin
+
+# This way the completion script does not have to parse Bazel's options
+# # repeatedly.  The directory in cache-path must be created manually.
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' users
 
 export MAKEFLAGS="-j"
 
