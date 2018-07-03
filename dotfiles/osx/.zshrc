@@ -70,6 +70,7 @@ alias kate="kate 2>&1 1>/dev/null"
 alias lsdfu="dfu-util -l"
 alias lscoppa="lsusb -d 18d1:"
 
+setopt rm_start_silent
 
 autoload add-zsh-hook
 
