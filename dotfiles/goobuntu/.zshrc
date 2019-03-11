@@ -72,6 +72,8 @@ alias kate="kate 2>&1 1>/dev/null"
 alias lsdfu="dfu-util -l"
 alias lscoppa="lsusb -d 18d1:"
 
+alias owns="dpkg -S"
+
 setopt rm_star_silent
 
 autoload add-zsh-hook
@@ -81,3 +83,7 @@ launch_autols() {
 }
 
 add-zsh-hook chpwd launch_autols
+
+# Enable EE CAD tools (go/ee-cad)
+export CDSHOME="/usr/local/google/home/palchak/wearables/ecad"
+source /usr/local/google/home/palchak/wearables/ecad/scripts/edatools-deb-palchak
