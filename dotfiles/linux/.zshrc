@@ -86,4 +86,8 @@ add-zsh-hook chpwd launch_autols
 
 # Enable EE CAD tools (go/ee-cad)
 export CDSHOME="/usr/local/google/home/palchak/wearables/ecad"
-source /usr/local/google/home/palchak/wearables/ecad/scripts/edatools-deb-palchak
+# source profile like .bashrc
+if [ -f /usr/local/google/home/palchak/wearables/ecad/scripts/edatools-deb-palchak ]; then
+	source /usr/local/google/home/palchak/wearables/ecad/scripts/edatools-deb-palchak
+fi
+
