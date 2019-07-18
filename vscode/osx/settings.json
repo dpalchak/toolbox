@@ -1,0 +1,15 @@
+{
+    "cortex-debug.enableTelemetry": false,
+    "cortex-debug.JLinkGDBServerPath": "${workspaceRoot}/tools/macosx/jlink/JLinkGDBServer",
+    "cortex-debug.armToolchainPath": "${workspaceRoot}/tools/macosx/gcc-arm-none-eabi/bin",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
+    "C_Cpp.clang_format_style": "file",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "editor.fontSize": 12,
+    "editor.tabSize": 2,
+    "terminal.integrated.fontFamily": "Courier New",
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Visual Studio Light",
+}

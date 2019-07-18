@@ -1,0 +1,7 @@
+alphabotsec.vscode-eclipse-keybindings-0.10.0/
+austin.code-gnu-global-0.2.2/
+bbenoist.togglehs-0.1.2/
+dan-c-underwood.arm-0.5.0/
+marus25.cortex-debug-0.3.1/
+ms-python.python-2019.6.24221/
+ms-vscode.cpptools-0.24.0/
