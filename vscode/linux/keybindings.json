@@ -1,0 +1,42 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "cmd+k",
+    "command": "-editor.action.nextSelectionMatchFindAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+g",
+    "command": "-workbench.action.terminal.findNext",
+    "when": "terminalFindWidgetFocused"
+  },
+  {
+    "key": "cmd+g",
+    "command": "-editor.action.nextMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindWidgetFocused"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-editor.action.previousSelectionMatchFindAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+1",
+    "command": "-editor.action.quickFix",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "meta+2",
+    "command": "workbench.action.editorLayoutTwoColumns"
+  }
+]
