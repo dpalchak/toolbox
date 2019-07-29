@@ -12,4 +12,7 @@
     "terminal.integrated.fontFamily": "Courier New",
     "editor.minimap.enabled": false,
     "workbench.colorTheme": "Visual Studio Light",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreview": false,
+    "window.zoomLevel": 0,
 }
