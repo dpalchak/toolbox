@@ -20,7 +20,7 @@ setopt appendhistory autocd extendedglob
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/usr/local/google/home/palchak/.zshrc'
+zstyle :compinstall filename '/Users/palchak/.zshrc'
 
 autoload -Uz compinit
 compinit

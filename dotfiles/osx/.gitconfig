@@ -1,0 +1,26 @@
+[user]
+	name = David Palchak
+	email = palchak@google.com
+[credential]
+	helper = corpsso
+	helper = osxkeychain
+[clangFormat]
+	style = file
+[color]
+	ui = auto
+[http]
+	cookiefile = /Users/palchak/.gitcookies
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args \"$PWD/$LOCAL\" \"$PWD/$REMOTE\"
+[merge]
+	tool = meld
+[mergetool]
+	prompt = false
+[mergetool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
