@@ -74,6 +74,8 @@ alias lscoppa="lsusb -d 18d1:"
 
 alias owns="dpkg -S"
 
+alias ccalc="wine \"c:\Program Files (x86)\Console Calculator\CCalc.exe\""
+
 setopt rm_star_silent
 
 autoload add-zsh-hook
