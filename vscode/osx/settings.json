@@ -1,10 +1,8 @@
 {
     "cortex-debug.enableTelemetry": false,
-    "cortex-debug.JLinkGDBServerPath": "${workspaceRoot}/tools/macosx/jlink/JLinkGDBServer",
-    "cortex-debug.armToolchainPath": "${workspaceRoot}/tools/macosx/gcc-arm-none-eabi/bin",
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
-    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_style": "Google",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "editor.fontSize": 12,
@@ -15,4 +13,13 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
     "window.zoomLevel": 0,
+    "editor.renderIndentGuides": false,
+    "editor.highlightActiveIndentGuide": false,
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
+    "editor.wrappingIndent": "indent",
+    "workbench.colorCustomizations": {
+        "editorGutter.background": "#e0e0e0",
+    },
+    "files.trimTrailingWhitespace": true,
 }
