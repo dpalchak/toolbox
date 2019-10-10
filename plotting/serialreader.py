@@ -4,7 +4,7 @@ from pyqtgraph.Qt import QtCore
 
 # Reads the serial input stream and converts text into numbers
 class SerialReader(QtCore.QObject):
-  sigDataReady = QtCore.pyqtSignal(float)
+  sigDataReady = QtCore.pyqtSignal(list)
 
   def __init__(self, device, baud, converter=float, timeout=0.001, **kwargs):
     super(SerialReader, self).__init__()
@@ -35,7 +35,8 @@ class SerialReader(QtCore.QObject):
         self.fragment = lines.pop()
         for line in lines:
           try:
-            n = self.conv(line)
-            self.sigDataReady.emit(n)
-          except ValueError:
+            data = self.conv(line)
+            if data is not None:
+              self.sigDataReady.emit(data)
+          except (ValueError, IndexError):
             print(line)

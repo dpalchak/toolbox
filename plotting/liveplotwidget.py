@@ -1,20 +1,19 @@
-#!/usr/bin/env python
-
 
 import pyqtgraph as QtGraph
 from pyqtgraph.Qt import QtCore
 
 from collections import deque
-import Queue
 
 QtGraph.setConfigOption('background', 'w')
 QtGraph.setConfigOption('foreground', 0.3)
 
 # This class is run off a QT timer. That timer fires and calls the update function
 class LivePlotWidget(QtGraph.PlotWidget):
+  DEFAULT_PEN_COLORS = ('b', 'g', 'r', 'c', 'm', 'y', 'k')
+
   sigRedraw = QtCore.pyqtSignal()
 
-  def __init__(self, tstep=1.0, history=10.0, init_val=0, fps=30, **kwargs):
+  def __init__(self, nchan=1, tstep=1.0, history=10.0, init_val=0, fps=30, **kwargs):
     super(LivePlotWidget, self).__init__(**kwargs)
     if self.parent() is None:
       #We are the top level window
@@ -27,10 +26,14 @@ class LivePlotWidget(QtGraph.PlotWidget):
     self.history = history
 
     max_samples = int(round(history/tstep)) + 1
-    self.data = deque([0.0], maxlen=max_samples)
-    self.time = deque([init_val], maxlen=max_samples)
-    line_pen = QtGraph.mkPen('b', width=2)
-    self.curve = self.plot(self.time, self.data, pen=line_pen)
+    self.nchan = nchan
+    self.data = [deque([init_val], maxlen=max_samples) for _ in range(nchan)]
+    self.time = deque([0.0], maxlen=max_samples)
+
+    self.curves =[None] * nchan
+    for chan in range(nchan):
+      pen_color = self.DEFAULT_PEN_COLORS[chan % len(self.DEFAULT_PEN_COLORS)]
+      self.curves[chan] = self.plot(self.time, self.data[chan], pen=QtGraph.mkPen(pen_color, width=2))
 
     self.enableAutoRange(axis=QtGraph.ViewBox.YAxis)
     self.setXRange(-history, tstep, padding=0)
@@ -60,12 +63,14 @@ class LivePlotWidget(QtGraph.PlotWidget):
       self.redraw(True)
 
   #Use the pyQt decorator here to reduce memory and improve performance
-  @QtCore.pyqtSlot(float, name='onDataReady')
-  def onDataReady(self, datum):
+  @QtCore.pyqtSlot(list, name='onDataReady')
+  def onDataReady(self, data):
+    print(data)
     # Loop until the queue is empty
     self.tlatest += self.tstep
-    self.data.append(datum)
     self.time.append(self.tlatest)
+    for (chan,datum) in enumerate(data):
+      self.data[chan].append(datum)
 
   #Use the pyQt decorator here to reduce memory and improve performance
   @QtCore.pyqtSlot(name='redraw')
@@ -79,7 +84,7 @@ class LivePlotWidget(QtGraph.PlotWidget):
       if (twidth > self.history):
         twidth = self.history
       self.setXRange(self.tmarker - twidth + self.tstep, self.tmarker + self.tstep, padding=0)
-    downsample = (len(self.data) > 2)
-    self.curve.setData(self.time, self.data, clipToView=True, autoDownsample=downsample,
-                       downsampleMethod='subsample')
+    downsample = (len(self.time) > 2)
+    for chan in range(self.nchan):
+      self.curves[chan].setData(self.time, self.data[chan], clipToView=True, autoDownsample=downsample, downsampleMethod='subsample')
     self.sigRedraw.emit()
