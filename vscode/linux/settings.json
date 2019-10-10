@@ -26,4 +26,5 @@
         "editorGutter.background": "#e0e0e0",
     },
     "files.trimTrailingWhitespace": true,
+    "C_Cpp.updateChannel": "Insiders",
 }
