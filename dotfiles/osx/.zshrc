@@ -40,7 +40,8 @@ prompt sorin
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' users
-
+zstyle ':completion:*' completer _complete _match
+setopt auto_list list_ambiguous nomenu_complete
 
 #Bindkeys based on $EDITOR
 bindkey -v
