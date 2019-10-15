@@ -92,5 +92,39 @@
   {
     "key": "ctrl+-",
     "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "cmd+3",
+    "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "cmd+3",
+    "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "shift+alt+cmd+right",
+    "command": "-cursorColumnSelectRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+cmd+right",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "ctrl+cmd+right",
+    "command": "-workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "shift+alt+cmd+left",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+cmd+left",
+    "command": "-workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "shift+alt+cmd+left",
+    "command": "-cursorColumnSelectLeft",
+    "when": "textInputFocus"
   }
 ]
