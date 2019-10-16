@@ -7,6 +7,7 @@
     "telemetry.enableTelemetry": false,
     "editor.fontSize": 12,
     "editor.tabSize": 2,
+    "editor.rulers": [100],
     "terminal.integrated.fontFamily": "Courier New",
     "editor.minimap.enabled": false,
     "workbench.colorTheme": "Visual Studio Light",
@@ -27,4 +28,5 @@
     },
     "files.trimTrailingWhitespace": true,
     "C_Cpp.updateChannel": "Insiders",
+    "window.title": "${dirty}${activeEditorMedium}",
 }

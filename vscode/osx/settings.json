@@ -28,4 +28,5 @@
     },
     "files.trimTrailingWhitespace": true,
     "C_Cpp.updateChannel": "Insiders",
+    "window.title": "${dirty}${activeEditorMedium}",
 }
