@@ -12,7 +12,7 @@ def main():
 
   reader = StdinReader()
 
-  plot = LivePlotWidget(tstep=0.001, history=50, nchan=2)
+  plot = LivePlotWidget(sample_freq=1000, buffer_secs=60.0, nchan=2)
   reader.sigDataReady.connect(plot.onDataReady)
 
   plot.setWindowTitle('STDIN plot')

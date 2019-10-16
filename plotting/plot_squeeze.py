@@ -22,7 +22,7 @@ def main():
   app = QtGui.QApplication(sys.argv)
 
   reader = SerialReader(args.device, args.baud, converter=get_strains)
-  plot = LivePlotWidget(tstep=(1.0/50.0), history=10, nchan=6)
+  plot = LivePlotWidget(sample_freq=50, buffer_secs=600.0, nchan=6)
   reader.sigDataReady.connect(plot.onDataReady)
 
   plot.setWindowTitle(args.device)
