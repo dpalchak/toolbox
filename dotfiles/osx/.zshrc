@@ -55,7 +55,7 @@ bindkey '^R' history-incremental-search-backward
 
 
 export MAKEFLAGS="-j"
-
+export CMAKE_GENERATOR="Ninja"
 
 alias ls="ls -FG"
 alias ll="ls -lFGh"
