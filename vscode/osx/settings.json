@@ -1,12 +1,12 @@
 {
     "cortex-debug.enableTelemetry": false,
-    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100}",
     "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
-    "C_Cpp.clang_format_style": "Google",
+    "C_Cpp.clang_format_style": "file",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "editor.fontSize": 12,
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "editor.rulers": [100],
     "terminal.integrated.fontFamily": "Courier New",
     "editor.minimap.enabled": false,
@@ -29,4 +29,23 @@
     "files.trimTrailingWhitespace": true,
     "C_Cpp.updateChannel": "Insiders",
     "window.title": "${dirty}${activeEditorMedium}",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.workspaceParsingPriority": "low",
+    "C_Cpp.intelliSenseCacheSize": 0,
+    "editor.autoClosingOvertype": "always",
+    "cmake.buildDirectory": "${workspaceFolder}/BUILD",
+    "cmake.useCMakeServer": false,
+    "cmake.configureSettings": {"CMAKE_COLOR_MAKEFILE":"off"},
+    "explorer.confirmDragAndDrop": false,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "editor.detectIndentation": false,
+    "clang-format.fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100}",
+    "clang-format.language.c.fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100}",
+    "clang-format.language.cpp.fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100}",
+    "editor.showFoldingControls": "always",
+    "cmake.buildToolArgs": [
+        "COLOR=0"
+    ],
 }
