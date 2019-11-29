@@ -126,5 +126,56 @@
     "key": "shift+alt+cmd+left",
     "command": "-cursorColumnSelectLeft",
     "when": "textInputFocus"
-  }
+},
+{
+    "key": "cmd+f8",
+    "command": "workbench.action.debug.start",
+    "when": "!inDebugMode"
+},
+{
+    "key": "shift+cmd+f11",
+    "command": "-workbench.action.debug.start",
+    "when": "!inDebugMode"
+},
+{
+    "key": "ctrl+f5",
+    "command": "-cmake.debugTarget",
+    "when": "inCMakeProject && !inDebugMode"
+},
+{
+    "key": "shift+f5",
+    "command": "-cmake.launchTarget"
+},
+{
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+},
+{
+    "key": "cmd+p",
+    "command": "workbench.action.showCommands"
+},
+{
+    "key": "cmd+f5",
+    "command": "workbench.action.debug.selectandstart"
+},
+{
+    "key": "f6",
+    "command": "-workbench.action.debug.pause",
+    "when": "debugState == 'running'"
+},
+{
+    "key": "f8",
+    "command": "workbench.action.debug.pause",
+    "when": "debugState == 'running'"
+},
+{
+    "key": "cmd+escape",
+    "command": "workbench.action.debug.stop",
+    "when": "inDebugMode"
+},
+{
+    "key": "shift+f5",
+    "command": "-workbench.action.debug.stop",
+    "when": "inDebugMode"
+},
 ]
