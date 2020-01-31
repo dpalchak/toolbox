@@ -178,4 +178,9 @@
     "command": "-workbench.action.debug.stop",
     "when": "inDebugMode"
 },
+{
+    "key": "cmd+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+},
 ]
