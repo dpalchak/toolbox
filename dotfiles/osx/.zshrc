@@ -80,4 +80,18 @@ launch_autols() {
   eval ls
 }
 
+findreplace() {
+  if (( $# != 2 )) then
+    echo usage: findreplace FILE_GLOB REGEX
+  fi
+  cmd="find -L . -type f -name \"$1\" -print0 | xargs -0 -t sed -i -e '$2'"
+  echo "'${cmd}'"  
+  eval ${cmd}
+}
+
 add-zsh-hook chpwd launch_autols
+
+path=('/Users/palchak/.bin' '/Users/palchak/Library/Android/sdk/platform-tools' $path)
+export PATH
+
+export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
