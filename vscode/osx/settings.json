@@ -45,5 +45,20 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "cmake.buildTask": true,
-    "cmake.defaultVariants": {}
+    "cmake.defaultVariants": {},
+
+    "files.associations": {
+        "*.gni": "gn",
+    },
+
+    "gnformat.path": "/Users/palchak/.bin/gn",
+    "[gn]":{
+        "editor.tabSize": 2
+    },
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ]
 }

@@ -183,4 +183,13 @@
     "command": "-workbench.action.reloadWindow",
     "when": "isDevelopment"
 },
+{
+    "key": "shift+cmd+up",
+    "command": "-cursorTopSelect",
+    "when": "textInputFocus"
+},
+{
+    "key": "shift+cmd+up",
+    "command": "editor.action.duplicateSelection"
+},
 ]
