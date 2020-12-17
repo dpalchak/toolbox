@@ -33,6 +33,15 @@ Plugin 'VundleVim/Vundle.vim'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+" PEP8 formatting for python files
+Plugin 'Vimjas/vim-python-pep8-indent'
+
+" Auto-formatting for many file types
+Plugin 'Chiel92/vim-autoformat'
+
+" Use eye-friendly colors
+Plugin 'altercation/vim-colors-solarized'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -67,13 +76,14 @@ set sw=4
 " Enable syntax highlighting
 syntax on
 
+" Show line numbers
+set number
+
 " Allow arrow keys to wrap around lines
 set whichwrap+=<,>,[,]
 
-
 " Always show statusline
 set laststatus=2
-
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
@@ -109,3 +119,10 @@ vmap ; :
 " Use a double semi-colon to get an actual semi-colon
 noremap ;; ;
 
+" Use F3 to initiate auto-formatting
+noremap <F3> :Autoformat<CR>
+
+" Use better contrast color scheme
+" let g:solarized_termcolors=256
+set background=dark
+" colorscheme solarized
