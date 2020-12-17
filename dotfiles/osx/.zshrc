@@ -73,6 +73,7 @@ alias lsdfu="dfu-util -l"
 alias lscoppa="lsusb -d 18d1:"
 
 setopt rm_star_silent
+setopt clobber
 
 autoload add-zsh-hook
 
@@ -91,7 +92,8 @@ findreplace() {
 
 add-zsh-hook chpwd launch_autols
 
-path=('/Users/palchak/.bin' '/Users/palchak/Library/Android/sdk/platform-tools' $path)
+# Note that 'path' is intentionally lower-case, as it is an array (not a string)
+path=('/Users/palchak/.local/bin' '/Users/palchak/Library/Android/sdk/platform-tools' '/Users/palchak/Library/Python/3.6/bin' $path)
 export PATH
 
 export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
