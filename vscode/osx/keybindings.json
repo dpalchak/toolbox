@@ -107,7 +107,7 @@
     "when": "textInputFocus"
   },
   {
-    "key": "shift+alt+cmd+right",
+    "key": "ctrl+cmd+right",
     "command": "workbench.action.moveEditorToNextGroup"
   },
   {
@@ -115,7 +115,7 @@
     "command": "-workbench.action.moveEditorToNextGroup"
   },
   {
-    "key": "shift+alt+cmd+left",
+    "key": "ctrl+cmd+left",
     "command": "workbench.action.moveEditorToPreviousGroup"
   },
   {
