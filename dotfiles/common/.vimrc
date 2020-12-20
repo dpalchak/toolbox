@@ -123,6 +123,8 @@ noremap ;; ;
 noremap <F3> :Autoformat<CR>
 
 " Use better contrast color scheme
-" let g:solarized_termcolors=256
+" let g:solarized_termcolors=16
+" let g:solarized_contrast="high"
 set background=dark
 " colorscheme solarized
+
