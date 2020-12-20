@@ -16,7 +16,8 @@ fi
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory autocd extendedglob
+setopt appendhistory autocd extendedglob no_share_history
+unsetopt share_history
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -97,3 +98,15 @@ path=('/Users/palchak/.local/bin' '/Users/palchak/Library/Android/sdk/platform-t
 export PATH
 
 export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
+
+# Tell the terminal about the current working directory at each prompt.
+
+if [ -z "$INSIDE_EMACS" ]; then
+    update_terminal_title() {
+        printf '\033]0;%s\007' "${PWD//${HOME}/~}"
+    }
+
+    # Register the function so it is called at each prompt.
+    autoload add-zsh-hook
+    add-zsh-hook precmd update_terminal_title
+fi
