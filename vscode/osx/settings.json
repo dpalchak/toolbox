@@ -31,8 +31,9 @@
     "update.showReleaseNotes": false,
     "window.title": "${dirty}${activeEditorMedium}",
     "window.zoomLevel": 0,
-    "workbench.colorCustomizations": {"editorGutter.background": "#e0e0e0",},
-    "workbench.colorTheme": "Visual Studio Light",
+    //"workbench.colorCustomizations": {
+        //"editorGutter.background": "#e0e0e0",
+    //},
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.tree.indent": 16,
@@ -51,7 +52,7 @@
         "*.gni": "gn",
     },
 
-    "gnformat.path": "/Users/palchak/.bin/gn",
+    "gnformat.path": "/Users/palchak/.local/bin/gn",
     "[gn]":{
         "editor.tabSize": 2
     },
@@ -60,5 +61,8 @@
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
-    ]
+    ],
+    "workbench.colorTheme": "Solarized Dark+",
+    "scm.defaultViewMode": "tree",
+    "scm.countBadge": "off"
 }
