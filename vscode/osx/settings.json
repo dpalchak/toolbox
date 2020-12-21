@@ -31,9 +31,14 @@
     "update.showReleaseNotes": false,
     "window.title": "${dirty}${activeEditorMedium}",
     "window.zoomLevel": 0,
-    //"workbench.colorCustomizations": {
-        //"editorGutter.background": "#e0e0e0",
-    //},
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
+        "editor.selectionHighlightBackground": "#01832256", //Same content as selection
+        "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
+        "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
+        "numberedBookmarks.lineBackground": "#007700",
+        //"editor.selectionHighlightBorder": "#FFFA",
+    },
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.tree.indent": 16,
