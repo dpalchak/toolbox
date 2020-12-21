@@ -8,7 +8,7 @@
 
 # source profile like .bashrc
 if [ -f /etc/profile ]; then
-	source /etc/profile
+    source /etc/profile
 fi
 
 
@@ -44,6 +44,12 @@ zstyle ':completion:*' users
 zstyle ':completion:*' completer _complete _match
 setopt auto_list nolist_ambiguous nomenu_complete glob_complete
 
+# Disable underlining in syntax highlighter
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+setopt rm_star_silent
+setopt clobber
 
 #Bindkeys based on $EDITOR
 bindkey -v
@@ -55,9 +61,29 @@ bindkey '\e[4~' end-of-line
 # Use standard ctrl+R for history search
 bindkey '^R' history-incremental-search-backward
 
+# Note that 'path' is intentionally lower-case, as it is an array (not a string)
+path=('/Users/palchak/.local/bin' '/Users/palchak/Library/Android/sdk/platform-tools' '/Users/palchak/Library/Python/3.6/bin' $path)
+export PATH
 
+export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
 export MAKEFLAGS="-j"
 export CMAKE_GENERATOR="Ninja"
+
+# Automatically run `ls` after changing a directory
+autoload add-zsh-hook
+launch_autols() {
+  eval ls
+}
+add-zsh-hook chpwd launch_autols
+
+findreplace() {
+  if (( $# != 2 )) then
+    echo usage: findreplace FILE_GLOB REGEX
+  fi
+  cmd="find -L . -type f -name \"$1\" -print0 | xargs -0 -t sed -i -e '$2'"
+  echo "'${cmd}'"  
+  eval ${cmd}
+}
 
 alias ls="ls -FG"
 alias ll="ls -lFGh"
@@ -71,42 +97,271 @@ alias ....="cd ../../.."
 alias kate="kate 2>&1 1>/dev/null"
 
 alias lsdfu="dfu-util -l"
-alias lscoppa="lsusb -d 18d1:"
 
-setopt rm_star_silent
-setopt clobber
+# Git aliases
+alias g='git'
 
-autoload add-zsh-hook
+# Add (a)
+alias ga='git add'
+alias gap='git add --patch'
+alias gau='git add --update'
 
-launch_autols() {
-  eval ls
-}
+# Branch (b)
+alias gb='git branch'
+alias gba='git branch --all --verbose'
+alias gbc='git checkout -b'
+alias gbd='git branch --delete'
+alias gbD='git branch --delete --force'
+alias gbl='git branch --verbose'
+alias gbL='git branch --all --verbose'
+alias gbm='git branch --move'
+alias gbM='git branch --move --force'
+alias gbr='git branch --move'
+alias gbR='git branch --move --force'
+alias gbs='git show-branch'
+alias gbS='git show-branch --all'
+alias gbv='git branch --verbose'
+alias gbV='git branch --verbose --verbose'
+alias gbx='git branch --delete'
+alias gbX='git branch --delete --force'
 
-findreplace() {
-  if (( $# != 2 )) then
-    echo usage: findreplace FILE_GLOB REGEX
-  fi
-  cmd="find -L . -type f -name \"$1\" -print0 | xargs -0 -t sed -i -e '$2'"
-  echo "'${cmd}'"  
-  eval ${cmd}
-}
+# Clean (cl)
+alias gcl='git clean -n'
+alias gclf='git clean -f'
 
-add-zsh-hook chpwd launch_autols
+# Clone (clo)
+alias gclo='git clone --recurse-submodules'
 
-# Note that 'path' is intentionally lower-case, as it is an array (not a string)
-path=('/Users/palchak/.local/bin' '/Users/palchak/Library/Android/sdk/platform-tools' '/Users/palchak/Library/Python/3.6/bin' $path)
-export PATH
+# Commit (cm)
+alias gcm='git commit --verbose'
+alias gcma='git commit --verbose --all'
+alias gcmm='git commit --message'
+alias gcmS='git commit -S --verbose'
+alias gcmSa='git commit -S --verbose --all'
+alias gcmSm='git commit -S --message'
+alias gcmam='git commit --all --message'
+alias gcmf='git commit --amend --reuse-message HEAD'
+alias gcmSf='git commit -S --amend --reuse-message HEAD'
+alias gcmF='git commit --verbose --amend'
+alias gcmSF='git commit -S --verbose --amend'
 
-export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
+# Cherry Pick (cp)
+alias gcp='git cherry-pick --ff'
+alias gcP='git cherry-pick --no-commit'
 
-# Tell the terminal about the current working directory at each prompt.
+# Cherry (ch)
+alias gch='git cherry -v --abbrev'
+alias gcH='git cherry -v'
 
-if [ -z "$INSIDE_EMACS" ]; then
-    update_terminal_title() {
-        printf '\033]0;%s\007' "${PWD//${HOME}/~}"
-    }
+# Checkout (co)
+alias gco='git checkout'
+alias gcop='git checkout --patch'
 
-    # Register the function so it is called at each prompt.
-    autoload add-zsh-hook
-    add-zsh-hook precmd update_terminal_title
-fi
+# Conflict (C)
+alias gCl='git --no-pager diff --name-only --diff-filter=U'
+alias gCa='git add $(gCl)'
+alias gCe='git mergetool $(gCl)'
+alias gCo='git checkout --ours --'
+alias gCO='gCo $(gCl)'
+alias gCt='git checkout --theirs --'
+alias gCT='gCt $(gCl)'
+
+# Diff (d)
+alias gd='git diff --no-ext-diff'
+alias gdd='git diff --no-ext-diff --word-diff'
+
+# Fetch (f)
+alias gf='git fetch'
+alias gfa='git fetch --all'
+alias gfc='git clone'
+
+# Flow (F)
+alias gFi='git flow init'
+alias gFf='git flow feature'
+alias gFb='git flow bugfix'
+alias gFl='git flow release'
+alias gFh='git flow hotfix'
+alias gFs='git flow support'
+
+alias gFfl='git flow feature list'
+alias gFfs='git flow feature start'
+alias gFff='git flow feature finish'
+alias gFfp='git flow feature publish'
+alias gFft='git flow feature track'
+alias gFfd='git flow feature diff'
+alias gFfr='git flow feature rebase'
+alias gFfc='git flow feature checkout'
+alias gFfm='git flow feature pull'
+alias gFfx='git flow feature delete'
+
+alias gFbl='git flow bugfix list'
+alias gFbs='git flow bugfix start'
+alias gFbf='git flow bugfix finish'
+alias gFbp='git flow bugfix publish'
+alias gFbt='git flow bugfix track'
+alias gFbd='git flow bugfix diff'
+alias gFbr='git flow bugfix rebase'
+alias gFbc='git flow bugfix checkout'
+alias gFbm='git flow bugfix pull'
+alias gFbx='git flow bugfix delete'
+
+alias gFll='git flow release list'
+alias gFls='git flow release start'
+alias gFlf='git flow release finish'
+alias gFlp='git flow release publish'
+alias gFlt='git flow release track'
+alias gFld='git flow release diff'
+alias gFlr='git flow release rebase'
+alias gFlc='git flow release checkout'
+alias gFlm='git flow release pull'
+alias gFlx='git flow release delete'
+
+alias gFhl='git flow hotfix list'
+alias gFhs='git flow hotfix start'
+alias gFhf='git flow hotfix finish'
+alias gFhp='git flow hotfix publish'
+alias gFht='git flow hotfix track'
+alias gFhd='git flow hotfix diff'
+alias gFhr='git flow hotfix rebase'
+alias gFhc='git flow hotfix checkout'
+alias gFhm='git flow hotfix pull'
+alias gFhx='git flow hotfix delete'
+
+alias gFsl='git flow support list'
+alias gFss='git flow support start'
+alias gFsf='git flow support finish'
+alias gFsp='git flow support publish'
+alias gFst='git flow support track'
+alias gFsd='git flow support diff'
+alias gFsr='git flow support rebase'
+alias gFsc='git flow support checkout'
+alias gFsm='git flow support pull'
+alias gFsx='git flow support delete'
+
+# Grep (g)
+alias gg='git grep'
+alias ggi='git grep --ignore-case'
+alias ggl='git grep --files-with-matches'
+alias ggL='git grep --files-without-matches'
+alias ggv='git grep --invert-match'
+alias ggw='git grep --word-regexp'
+
+# Index (i)
+alias gid='git diff --no-ext-diff --cached'
+alias giD='git diff --no-ext-diff --cached --word-diff'
+alias gii='git update-index --assume-unchanged'
+alias giI='git update-index --no-assume-unchanged'
+alias gir='git reset'
+alias giR='git reset --patch'
+alias gix='git rm -r --cached'
+alias giX='git rm -rf --cached'
+
+# Log (l)
+alias gl='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
+alias gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
+alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
+alias glo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'
+alias glg='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
+alias glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
+alias glc='git shortlog --summary --numbered'
+
+# Ls-Files (L)
+alias gL='git ls-files'
+alias gLc='git ls-files --cached'
+alias gLx='git ls-files --deleted'
+alias gLm='git ls-files --modified'
+alias gLo='git ls-files --other --exclude-standard'
+alias gLk='git ls-files --killed'
+alias gLi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
+
+# Merge (m)
+alias gm='git merge'
+alias gmnc='git merge --no-commit'
+alias gmff='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmt='git mergetool'
+
+# Submodule (M)
+alias gM='git submodule'
+alias gMa='git submodule add'
+alias gMf='git submodule foreach'
+alias gMi='git submodule init'
+alias gMI='git submodule update --init --recursive'
+alias gMl='git submodule status'
+alias gMm='git-submodule-move'
+alias gMs='git submodule sync'
+alias gMu='git submodule foreach git pull origin master'
+alias gMx='git-submodule-remove'
+
+# Push (pu)
+alias gpu='git push'
+alias gpuf='git push --force-with-lease'
+alias gpuF='git push --force'
+alias gpa='git push --all'
+alias gpat='git push --all && git push --tags'
+alias gpt='git push --tags'
+alias gpuc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+
+# Pull (pl)
+alias gpl='git pull'
+alias gplr='git pull --rebase'
+alias gplpu='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+
+# Rebase (rb)
+alias grb='git rebase'
+alias gra='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbi='git rebase --interactive'
+alias grbs='git rebase --skip'
+
+# Reset (re)
+alias gre='git reset'
+alias gres='git reset --soft'
+alias greh='git reset --hard'
+alias greH='git reset "HEAD^"'
+
+# Remove (rm)
+alias grm='git rm -r'
+alias grmf='git rm -rf'
+
+# Revert
+alias grv='git revert'
+
+# Remote (rt)
+alias gt='git remote'
+alias gtl='git remote --verbose'
+alias gta='git remote add'
+alias gtx='git remote rm'
+alias gtm='git remote rename'
+alias gtu='git remote update'
+alias gtp='git remote prune'
+alias gts='git remote show'
+alias gtb='git-hub-browse'
+
+# Status (s)
+alias gs='git status'
+alias gss='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
+alias gsS='git status --ignore-submodules=${_git_status_ignore_submodules}'
+
+# Show (sw)
+alias gsw='git show'
+
+# Stash (S)
+alias gS='git stash'
+alias gSa='git stash apply'
+alias gSx='git stash drop'
+alias gSX='git-stash-clear-interactive'
+alias gSl='git stash list'
+alias gSL='git-stash-dropped'
+alias gSd='git stash show --patch --stat'
+alias gSp='git stash pop'
+alias gSr='git-stash-recover'
+alias gSs='git stash save --include-untracked'
+alias gSS='git stash save --patch --no-keep-index'
+alias gSw='git stash save --include-untracked --keep-index'
+
+# Tag (t)
+alias gt='git tag'
+alias gtl='git tag -l'
+
+
