@@ -53,6 +53,8 @@ bindkey '\e[4~' end-of-line
 # Use standard ctrl+R for history search
 bindkey '^R' history-incremental-search-backward
 
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[cursor]=underline
 
 export MAKEFLAGS="-j"
 
@@ -93,4 +95,6 @@ export CDSHOME="/usr/local/google/home/palchak/wearables/ecad"
 if [ -f /usr/local/google/home/palchak/wearables/ecad/scripts/edatools-deb-palchak ]; then
 	source /usr/local/google/home/palchak/wearables/ecad/scripts/edatools-deb-palchak
 fi
+
+export ADB_VENDOR_KEYS=/usr/local/google/home/palchak/firmware/android/adb_keys
 
