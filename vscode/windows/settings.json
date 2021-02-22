@@ -1,0 +1,17 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "jupyter.interactiveWindowMode": "perFile",
+    "jupyter.askForKernelRestart": false,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "python.terminal.launchArgs": [
+        "-m",
+        "IPython",
+        "--no-autoindent",
+    ],
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": true,
+    "editor.tabSize": 2,
+    "window.openFilesInNewWindow": "off"
+}
