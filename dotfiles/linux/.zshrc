@@ -98,3 +98,5 @@ fi
 
 export ADB_VENDOR_KEYS=/usr/local/google/home/palchak/firmware/android/adb_keys
 
+export MGLS_LICENSE_FILE=/usr/local/google/home/palchak/.lattice/radiant/2.2/license/license.dat
+
