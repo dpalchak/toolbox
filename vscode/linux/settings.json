@@ -10,7 +10,6 @@
     "editor.rulers": [100],
     "terminal.integrated.fontFamily": "Courier New",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Visual Studio Light",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.enablePreview": false,
     "gnuGlobal.gtagsForceCpp": "Enabled",
@@ -24,9 +23,12 @@
     "workbench.tree.renderIndentGuides": "always",
     "editor.wrappingIndent": "indent",
     "workbench.colorCustomizations": {
-        "editorGutter.background": "#e0e0e0",
+        "editorGutter.background": "#040404"
     },
     "files.trimTrailingWhitespace": true,
     "C_Cpp.updateChannel": "Insiders",
     "window.title": "${dirty}${activeEditorMedium}",
+    "editor.renderWhitespace": "all",
+    "update.mode": "manual",
+    "explorer.confirmDragAndDrop": false,
 }

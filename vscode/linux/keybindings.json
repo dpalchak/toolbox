@@ -168,5 +168,20 @@
     "key": "ctrl+k ctrl+o",
     "command": "-workbench.action.files.openLocalFolder",
     "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "-editor.action.quickFix",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "-editor.action.quickFix",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "-editor.action.quickFix",
+    "when": "editorTextFocus"
   }
 ]

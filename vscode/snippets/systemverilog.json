@@ -1,7 +1,7 @@
 {
-	// Place your snippets for systemverilog here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// Place your snippets for systemverilog here. Each snippet is defined under a snippet name and has a prefix, body and
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
 	// same ids are connected.
 	// Example:
 	// "Print to console": {
@@ -13,24 +13,24 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"Auto dffe": {
+	"Async dffe": {
 		"prefix": "always_ff",
 		"body": [
 			"always_ff @(posedge ${1:clk_i} or negedge ${2:arst_ni}) begin : ff_${3:data}",
 			"\tif (!$2) begin",
 			"\t\t${4:$3_q} <= ${5:0};",
 			"\tend else begin",
-			"\t\tif (${6:$3_en}) begin",
+			"\t\tif (${6:$3_valid}) begin",
 			"\t\t\t$4 <= ${7:$3_d};",
 			"\t\tend",
 			"\tend",
 			"end // ff_$3",
 			"$0"
 		],
-		"description": "Autocomplete dffe block with posedge clock and negedge reset"
+		"description": "DFF, async clear, enable"
 	},
 
-	"Auto dff": {
+	"Async dff": {
 		"prefix": "always_ff",
 		"body": [
 			"always_ff @(posedge ${1:clk_i} or negedge ${2:arst_ni}) begin : ff_${3:signal}",
@@ -42,7 +42,50 @@
 			"end // ff_$3",
 			"$0"
 		],
-		"description": "Autocomplete dff block with posedge clock and negedge reset"
-	}
-	
+		"description": "DFF, async clear"
+	},
+
+	"Sync dffe": {
+		"prefix": "always_ff",
+		"body": [
+			"always_ff @(posedge ${1:clk_i}) begin : ff_${2:signal}",
+			"\tif (${3:reset_i}) begin",
+			"\t\t${4:$2_q} <= ${5:0};",
+			"\tend else begin",
+			"\t\tif (${6:$2_valid}) begin",
+			"\t\t\t$4 <= ${7:$2_d};",
+			"\t\tend",
+			"\tend",
+			"end // ff_$2",
+			"$0"
+		],
+		"description": "DFF, sync clear, enable"
+	},
+
+	"Sync dff": {
+		"prefix": "always_ff",
+		"body": [
+			"always_ff @(posedge ${1:clk_i}) begin : ff_${2:signal}",
+			"\tif (${3:reset_i}) begin",
+			"\t\t${4:$2_q} <= ${5:0};",
+			"\tend else begin",
+			"\t\t$4 <= ${6:$2_d};",
+			"\tend",
+			"end // ff_$2",
+			"$0"
+		],
+		"description": "DFF, sync clear"
+	},
+
+
+	"Auto comb": {
+		"prefix": "always_comb",
+		"body": [
+			"always_comb begin : comb_${1:signal}",
+			"\t$0",
+			"end // comb_$1"
+		],
+		"description": "Autocomplete combinational block"
+	},
+
 }
