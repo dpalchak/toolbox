@@ -183,5 +183,14 @@
     "key": "ctrl+1",
     "command": "-editor.action.quickFix",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "-workbench.view.search"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-editor.action.referenceSearch.trigger",
+    "when": "editorTextFocus"
   }
 ]
