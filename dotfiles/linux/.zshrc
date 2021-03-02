@@ -11,6 +11,8 @@ if [ -f /etc/profile ]; then
 	source /etc/profile
 fi
 
+# Disable XON/XOFF flow control via Ctrl-S/Ctrl-Q
+stty -ixon
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
@@ -99,4 +101,5 @@ fi
 export ADB_VENDOR_KEYS=/usr/local/google/home/palchak/firmware/android/adb_keys
 
 export MGLS_LICENSE_FILE=/usr/local/google/home/palchak/.lattice/radiant/2.2/license/license.dat
+export MODELSIM_TCL="$HOME/.config/modelsim.tcl"
 
