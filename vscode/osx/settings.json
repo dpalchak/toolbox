@@ -25,6 +25,12 @@
     "editor.wrappingIndent": "indent",
     "explorer.confirmDragAndDrop": false,
     "files.trimTrailingWhitespace": true,
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "palchak.mtv.corp.google.com": "linux"
+    },
+    "remote.SSH.configFile": "~/.ssh/config",
+    "remote.SSH.path": "/usr/local/bin/ssh",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terminal.integrated.fontFamily": "Courier New",
@@ -55,19 +61,19 @@
 
     "files.associations": {
         "*.gni": "gn",
+        "*.rst": "restructuredtext"
     },
 
     "gnformat.path": "/Users/palchak/.local/bin/gn",
     "[gn]":{
         "editor.tabSize": 2
     },
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": [],
     "workbench.colorTheme": "Solarized Dark+",
     "scm.defaultViewMode": "tree",
-    "scm.countBadge": "off"
+    "scm.countBadge": "off",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "[systemverilog]": {
+        "editor.tabSize": 2
+    }
 }
