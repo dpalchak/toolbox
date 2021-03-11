@@ -70,7 +70,7 @@ bindkey '\e[4~' end-of-line
 bindkey '^R' history-incremental-search-backward
 
 # Note that 'path' is intentionally lower-case, as it is an array (not a string)
-path=("${HOME}/.local/bin" "${HOME}/Library/Android/sdk/platform-tools" "${HOME}/Library/Python/3.6/bin" $path)
+path=("${HOME}/.local/bin" "${HOME}/Library/Android/sdk/platform-tools" "${HOME}/Library/Python/3.6/bin" "/usr/local/opt/coreutils/libexec/gnubin/" $path)
 export PATH
 
 export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
