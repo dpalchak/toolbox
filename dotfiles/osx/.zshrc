@@ -11,6 +11,8 @@ if [ -f /etc/profile ]; then
     source /etc/profile
 fi
 
+# Disable XON/XOFF flow control via Ctrl-S/Ctrl-Q
+stty -ixon
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
@@ -21,7 +23,7 @@ unsetopt share_history
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/palchak/.zshrc'
+zstyle :compinstall filename "${HOME}/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -45,8 +47,14 @@ zstyle ':completion:*' completer _complete _match
 setopt auto_list nolist_ambiguous nomenu_complete glob_complete
 
 # Disable underlining in syntax highlighter
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+# To differentiate aliases from other command types
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+
+# To have paths colored instead of underlined
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[cursor]=underline
 
 setopt rm_star_silent
 setopt clobber
@@ -62,7 +70,7 @@ bindkey '\e[4~' end-of-line
 bindkey '^R' history-incremental-search-backward
 
 # Note that 'path' is intentionally lower-case, as it is an array (not a string)
-path=('/Users/palchak/.local/bin' '/Users/palchak/Library/Android/sdk/platform-tools' '/Users/palchak/Library/Python/3.6/bin' $path)
+path=("${HOME}/.local/bin" "${HOME}/Library/Android/sdk/platform-tools" "${HOME}/Library/Python/3.6/bin" $path)
 export PATH
 
 export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
@@ -134,16 +142,18 @@ alias gclo='git clone --recurse-submodules'
 
 # Commit (cm)
 alias gcm='git commit --verbose'
-alias gcma='git commit --verbose --all'
 alias gcmm='git commit --message'
+alias gcma='git commit --amend --verbose'
+alias gcmar='git commit --amend --reuse-message HEAD'
+alias gcml='git commit --all --verbose'
+alias gcmlm='git commit --all --message'
+alias gcmlar='git commit --all --amend --reuse-message HEAD'
 alias gcmS='git commit -S --verbose'
-alias gcmSa='git commit -S --verbose --all'
+alias gcmSa='git commit -S --amend --verbose'
+alias gcmSl='git commit -S --all --verbose'
 alias gcmSm='git commit -S --message'
-alias gcmam='git commit --all --message'
-alias gcmf='git commit --amend --reuse-message HEAD'
-alias gcmSf='git commit -S --amend --reuse-message HEAD'
-alias gcmF='git commit --verbose --amend'
-alias gcmSF='git commit -S --verbose --amend'
+alias gcmSar='git commit -S --amend --reuse-message HEAD'
+alias gcmSlar='git commit -S --all --amend --reuse-message HEAD'
 
 # Cherry Pick (cp)
 alias gcp='git cherry-pick --ff'
@@ -277,7 +287,7 @@ alias gLi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 # Merge (m)
 alias gm='git merge'
 alias gmnc='git merge --no-commit'
-alias gmff='git merge --no-ff'
+alias gmff='git merge --ff-only'
 alias gma='git merge --abort'
 alias gmt='git mergetool'
 
