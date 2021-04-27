@@ -75,5 +75,8 @@
     "python.defaultInterpreterPath": "/usr/bin/python3",
     "[systemverilog]": {
         "editor.tabSize": 2
-    }
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "remote.SSH.connectTimeout": 30,
+    "explorer.compactFolders": false
 }

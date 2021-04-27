@@ -192,4 +192,9 @@
     "key": "shift+cmd+up",
     "command": "editor.action.duplicateSelection"
 },
+{
+    "key": "shift+cmd+b",
+    "command": "-editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && editorTextFocus"
+},
 ]
