@@ -118,11 +118,6 @@
     "command": "-workbench.action.navigateBack"
   },
   {
-    "key": "ctrl+shift+i",
-    "command": "-editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "ctrl+i",
     "command": "editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -158,26 +153,6 @@
     "key": "ctrl+k ctrl+o",
     "command": "-workbench.action.files.openLocalFolder",
     "when": "remoteFileDialogVisible"
-  },
-  {
-    "key": "ctrl+k ctrl+o",
-    "command": "-workbench.action.files.openLocalFolder",
-    "when": "remoteFileDialogVisible"
-  },
-  {
-    "key": "ctrl+k ctrl+o",
-    "command": "-workbench.action.files.openLocalFolder",
-    "when": "remoteFileDialogVisible"
-  },
-  {
-    "key": "ctrl+1",
-    "command": "-editor.action.quickFix",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+1",
-    "command": "-editor.action.quickFix",
-    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+1",
