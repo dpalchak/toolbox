@@ -106,6 +106,8 @@ alias kate="kate 2>&1 1>/dev/null"
 
 alias lsdfu="dfu-util -l"
 
+alias xpra_c="Xpra attach --dpi=120 --encoding=rgb --title=@title@ --ssh=\"ssh\" \"ssh://palchak.mtv.corp.google.com/:42\""
+
 # Git aliases
 alias g='git'
 
