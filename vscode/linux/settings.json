@@ -31,4 +31,5 @@
     "editor.renderWhitespace": "all",
     "update.mode": "manual",
     "explorer.confirmDragAndDrop": false,
+    "git.suggestSmartCommit": false,
 }

@@ -167,5 +167,14 @@
     "key": "ctrl+shift+g",
     "command": "-editor.action.referenceSearch.trigger",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-editor.debug.action.toggleBreakpoint",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "-workbench.action.findInFiles"
   }
 ]
