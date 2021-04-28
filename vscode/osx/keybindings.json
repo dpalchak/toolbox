@@ -3586,11 +3586,6 @@
         "command": "editor.action.selectAll"
     },
     {
-        "key": "ctrl+l",
-        "command": "expandLineSelection",
-        "when": "textInputFocus"
-    },
-    {
         "key": "shift+tab",
         "command": "outdent",
         "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
@@ -3814,12 +3809,12 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+shift+alt+down",
+        "key": "ctrl+alt+down",
         "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+shift+alt+up",
+        "key": "ctrl+alt+up",
         "command": "editor.action.copyLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -5125,11 +5120,6 @@
         "when": "notebookCellEditable && notebookCellEditorFocused && notebookEditable && notebookEditorFocused && !notebookEditorCursorAtEditorBeginEnd"
     },
     {
-        "key": "ctrl+l",
-        "command": "notebook.centerActiveCell",
-        "when": "notebookEditorFocused"
-    },
-    {
         "key": "ctrl+f",
         "command": "notebook.find",
         "when": "notebookEditorFocused"
@@ -5682,10 +5672,6 @@
     {
         "key": "ctrl+3",
         "command": "workbench.action.focusThirdEditorGroup"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "workbench.action.gotoLine"
     },
     {
         "key": "ctrl+shift+o",
@@ -6514,7 +6500,7 @@
         "key": "shift+alt+h",
         "command": "references-view.showCallHierarchy",
         "when": "editorHasCallHierarchyProvider"
-    }
+    },
     // End of Linux keybindings
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -6686,6 +6672,9 @@
         "key": "ctrl+shift+g",
         "command": "-editor.action.referenceSearch.trigger",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.gotoLine"
     }
-    // End of user customizations
 ]
