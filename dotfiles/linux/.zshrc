@@ -36,6 +36,9 @@ fi
 
 # Customize to your needs...
 
+setopt appendhistory autocd extendedglob no_share_history
+unsetopt share_history
+
 prompt sorin
 
 # This way the completion script does not have to parse Bazel's options
@@ -101,6 +104,9 @@ alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+# Change to the root directory of the current git repo
+alias cdg="cd `git rev-parse --show-toplevel`"
 
 alias ccd="pwd | xclip -selection clipboard"
 
@@ -185,6 +191,7 @@ alias gCT='gCt $(gCl)'
 # Diff (d)
 alias gd='git diff --no-ext-diff'
 alias gdd='git diff --no-ext-diff --word-diff'
+alias gdc='git diff --cached'
 
 # Fetch (f)
 alias gf='git fetch'
@@ -273,7 +280,7 @@ alias gix='git rm -r --cached'
 alias giX='git rm -rf --cached'
 
 # Log (l)
-alias gl='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
+alias gl='git log --topo-order'
 alias gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
 alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
 alias glo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'
