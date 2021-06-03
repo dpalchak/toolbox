@@ -7,7 +7,10 @@
     "telemetry.enableTelemetry": false,
     "editor.fontSize": 12,
     "editor.tabSize": 2,
-    "editor.rulers": [100],
+    "editor.rulers": [
+        100
+    ],
+    "editor.occurrencesHighlight": false,
     "terminal.integrated.fontFamily": "Courier New",
     "editor.minimap.enabled": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -16,14 +19,15 @@
     "update.showReleaseNotes": false,
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
-    "window.zoomLevel": 0,
     "editor.renderIndentGuides": false,
     "editor.highlightActiveIndentGuide": false,
     "workbench.tree.indent": 16,
     "workbench.tree.renderIndentGuides": "always",
     "editor.wrappingIndent": "indent",
     "workbench.colorCustomizations": {
-        "editorGutter.background": "#040404"
+        "editorGutter.background": "#040404",
+        "editor.lineHighlightBackground": "#303040",
+        "gitDecoration.ignoredResourceForeground": "#a4a4a4"
     },
     "files.trimTrailingWhitespace": true,
     "C_Cpp.updateChannel": "Insiders",
@@ -32,4 +36,10 @@
     "update.mode": "manual",
     "explorer.confirmDragAndDrop": false,
     "git.suggestSmartCommit": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.editor.closeEmptyGroups": false,
+    "workbench.startupEditor": "none",
+    "explorer.autoReveal": false,
+    "kconfig.zephyr.base": "/usr/local/google/home/palchak/projects/pointy/boosty/third_party/nordic/ncs_v1.5.1/zephyr",
+    "search.useIgnoreFiles": false,
 }
