@@ -106,7 +106,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # Change to the root directory of the current git repo
-alias cdg="cd `git rev-parse --show-toplevel`"
+alias cdg='cd $(git rev-parse --show-toplevel)'
 
 alias ccd="pwd | xclip -selection clipboard"
 
