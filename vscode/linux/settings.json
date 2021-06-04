@@ -9,7 +9,7 @@
     "editor.fontSize": 12,
     "editor.highlightActiveIndentGuide": false,
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.multiCursorModifier": "alt",
     "editor.occurrencesHighlight": false,
     "editor.renderIndentGuides": false,
     "editor.renderWhitespace": "all",
