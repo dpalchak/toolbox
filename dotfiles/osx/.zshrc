@@ -29,6 +29,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+setopt appendhistory autocd extendedglob no_share_history
+unsetopt share_history
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
