@@ -68,7 +68,12 @@
     "[gn]":{
         "editor.tabSize": 2
     },
-    "workbench.editorAssociations": [],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
     "workbench.colorTheme": "Solarized Dark+",
     "scm.defaultViewMode": "tree",
     "scm.countBadge": "off",
@@ -76,7 +81,8 @@
     "[systemverilog]": {
         "editor.tabSize": 2
     },
-    "workbench.startupEditor": "newUntitledFile",
+    "workbench.startupEditor": "none",
     "remote.SSH.connectTimeout": 30,
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "window.restoreWindows": "none"
 }
