@@ -2,14 +2,22 @@
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100}",
     "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
     "C_Cpp.clang_format_style": "file",
-    "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.intelliSenseCacheSize": 511,
     "C_Cpp.updateChannel": "Insiders",
     "C_Cpp.workspaceParsingPriority": "low",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
     "cmake.buildDirectory": "${workspaceFolder}/BUILD",
-    "cmake.configureSettings": {"CMAKE_COLOR_MAKEFILE":"off"},
+    "cmake.buildTask": true,
+    "cmake.configureOnOpen": false,
+    "cmake.configureSettings": {
+        "CMAKE_COLOR_MAKEFILE": "off"
+    },
+    "cmake.defaultVariants": {},
     "cmake.generator": "Ninja",
     "cmake.useCMakeServer": false,
     "cortex-debug.enableTelemetry": false,
@@ -19,67 +27,64 @@
     "editor.highlightActiveIndentGuide": false,
     "editor.minimap.enabled": false,
     "editor.renderIndentGuides": false,
-    "editor.rulers": [100],
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        100
+    ],
     "editor.showFoldingControls": "always",
     "editor.tabSize": 4,
     "editor.wrappingIndent": "indent",
+    "explorer.autoReveal": false,
+    "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
-    "files.trimTrailingWhitespace": true,
-    "remote.SSH.useLocalServer": false,
-    "remote.SSH.remotePlatform": {
-        "palchak.mtv.corp.google.com": "linux"
-    },
-    "remote.SSH.configFile": "~/.ssh/config",
-    "remote.SSH.path": "/usr/local/bin/ssh",
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "terminal.integrated.fontFamily": "Courier New",
-    "update.showReleaseNotes": false,
-    "window.title": "${dirty}${activeEditorMedium}",
-    "window.zoomLevel": 0,
-    "workbench.colorCustomizations": {
-        "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
-        "editor.selectionHighlightBackground": "#01832256", //Same content as selection
-        "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
-        "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
-        "numberedBookmarks.lineBackground": "#007700",
-        //"editor.selectionHighlightBorder": "#FFFA",
-    },
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.tree.indent": 16,
-    "workbench.tree.renderIndentGuides": "always",
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
-    "cmake.configureOnOpen": false,
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "cmake.buildTask": true,
-    "cmake.defaultVariants": {},
-
     "files.associations": {
         "*.gni": "gn",
         "*.rst": "restructuredtext"
     },
-
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
     "gnformat.path": "/Users/palchak/.local/bin/gn",
-    "[gn]":{
-        "editor.tabSize": 2
+    "kconfig.zephyr.base": "/usr/local/google/home/palchak/projects/pointy/boosty/third_party/nordic/ncs_v1.5.1/zephyr",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.pythonPath": "python3",
+    "remote.SSH.configFile": "~/.ssh/config",
+    "remote.SSH.connectTimeout": 30,
+    "remote.SSH.path": "/usr/local/bin/ssh",
+    "remote.SSH.remotePlatform": {
+        "palchak.mtv.corp.google.com": "linux"
     },
+    "remote.SSH.useLocalServer": false,
+    "scm.countBadge": "off",
+    "scm.defaultViewMode": "tree",
+    "search.useIgnoreFiles": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.fontFamily": "Courier New",
+    "update.showReleaseNotes": false,
+    "window.restoreWindows": "none",
+    "window.title": "${dirty}${activeEditorMedium}",
+    "window.zoomLevel": 0,
+    "workbench.colorCustomizations": {
+        "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
+        "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
+        "editor.lineHighlightBackground": "#303040",
+        "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
+        "editor.selectionHighlightBackground": "#01832256", //Same content as selection
+        "editor.selectionHighlightBorder": "#FFFA",
+        "editorGutter.background": "#040404",
+        "gitDecoration.ignoredResourceForeground": "#a4a4a4",
+        "numberedBookmarks.lineBackground": "#007700"
+    },
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
-    "workbench.colorTheme": "Solarized Dark+",
-    "scm.defaultViewMode": "tree",
-    "scm.countBadge": "off",
-    "python.defaultInterpreterPath": "/usr/bin/python3",
-    "[systemverilog]": {
-        "editor.tabSize": 2
-    },
     "workbench.startupEditor": "none",
-    "remote.SSH.connectTimeout": 30,
-    "explorer.compactFolders": false,
-    "window.restoreWindows": "none"
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.colorTheme": "Solarized Dark+"
 }
