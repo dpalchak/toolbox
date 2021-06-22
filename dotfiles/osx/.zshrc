@@ -29,15 +29,15 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-setopt appendhistory autocd extendedglob no_share_history
-unsetopt share_history
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
+
+setopt appendhistory autocd extendedglob no_share_history
+unsetopt share_history
 
 prompt sorin
 
@@ -110,6 +110,7 @@ alias kate="kate 2>&1 1>/dev/null"
 alias lsdfu="dfu-util -l"
 
 alias xpra_c="Xpra attach --dpi=120 --encoding=rgb --title=@title@ --ssh=\"ssh\" --desktop-scaling=off \"ssh://palchak.mtv.corp.google.com/:42\""
+
 
 # Git aliases
 alias g='git'
@@ -184,6 +185,7 @@ alias gCT='gCt $(gCl)'
 # Diff (d)
 alias gd='git diff --no-ext-diff'
 alias gdd='git diff --no-ext-diff --word-diff'
+alias gdc='git diff --cached'
 
 # Fetch (f)
 alias gf='git fetch'
@@ -272,7 +274,7 @@ alias gix='git rm -r --cached'
 alias giX='git rm -rf --cached'
 
 # Log (l)
-alias gl='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
+alias gl='git log --topo-order'
 alias gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
 alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
 alias glo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'

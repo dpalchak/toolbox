@@ -68,12 +68,9 @@
     "[gn]":{
         "editor.tabSize": 2
     },
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "workbench.colorTheme": "Solarized Dark+",
     "scm.defaultViewMode": "tree",
     "scm.countBadge": "off",
