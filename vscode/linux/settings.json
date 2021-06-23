@@ -32,17 +32,16 @@
     "update.showReleaseNotes": false,
     "window.title": "${dirty}${activeEditorMedium}",
     "workbench.colorCustomizations": {
-        "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
-        "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
+        // "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
+        // "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
+        // "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
+        // "editor.selectionHighlightBackground": "#01832256", //Same content as selection
         "editor.lineHighlightBackground": "#303040",
-        "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
-        "editor.selectionHighlightBackground": "#01832256", //Same content as selection
-        "editor.selectionHighlightBorder": "#FFFA",
+        "editor.selectionHighlightBorder": "#FFF6",
         "editorGutter.background": "#040404",
         "gitDecoration.ignoredResourceForeground": "#a4a4a4",
         "numberedBookmarks.lineBackground": "#007700"
     },
-    "workbench.colorTheme": "Solarized Dark+",
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
