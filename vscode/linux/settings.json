@@ -4,7 +4,11 @@
     "C_Cpp.clang_format_style": "file",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "gcc-arm",
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "C_Cpp.updateChannel": "Insiders",
+    "auto-comment-blocks.singleLineBlockOnEnter": true,
     "cortex-debug.enableTelemetry": false,
     "editor.fontSize": 12,
     "editor.highlightActiveIndentGuide": false,
@@ -19,11 +23,14 @@
     "editor.tabSize": 4,
     "editor.wrappingIndent": "indent",
     "explorer.autoReveal": false,
+    "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
     "files.trimTrailingWhitespace": true,
     "git.suggestSmartCommit": false,
     "gnuGlobal.gtagsForceCpp": "Enabled",
     "kconfig.zephyr.base": "/usr/local/google/home/palchak/projects/pointy/boosty/third_party/nordic/ncs_v1.5.1/zephyr",
+    "problems.decorations.enabled": false,
+    "python.languageServer": "Pylance",
     "search.useIgnoreFiles": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
@@ -45,6 +52,12 @@
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editorAssociations": [
+        {
+            "filenamePattern": "*.ipynb",
+            "viewType": "jupyter-notebook"
+        }
+    ],
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 16,
     "workbench.tree.renderIndentGuides": "always"

@@ -92,9 +92,14 @@ findreplace() {
     echo usage: findreplace FILE_GLOB REGEX
   fi
   cmd="find -L . -type f -name \"$1\" -print0 | xargs -0 -t sed -i -e '$2'"
-  echo "'${cmd}'"  
+  echo "'${cmd}'"
   eval ${cmd}
 }
+
+alias cmaked="cmake -BBUILD -H."
+alias cmakedc="rm -rf BUILD && cmaked"
+alias cbuild="cmaked && ninja -C BUILD"
+alias cbuildc="rm -rf BUILD && cbuild"
 
 alias ls="ls -F --color=auto"
 alias ll="ls -lFh --color=auto"
@@ -105,8 +110,11 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias cdboosty="cd ~/projects/pointy/boosty"
+
 # Change to the root directory of the current git repo
-alias cdg='cd $(git rev-parse --show-toplevel)'
+alias gittop='git rev-parse --show-toplevel'
+alias cdg='cd $(gittop)'
 
 alias ccd="pwd | xclip -selection clipboard"
 
@@ -117,6 +125,9 @@ alias lsdfu="dfu-util -l"
 alias owns="dpkg -S"
 
 alias ccalc="wine \"c:\Program Files (x86)\Console Calculator\CCalc.exe\""
+
+# gnome-terminal generates some annoying console spew, so silence it
+alias gnome-terminal="gnome-terminal 2>/dev/null"
 
 # Git aliases
 alias g='git'
