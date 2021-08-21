@@ -26,8 +26,9 @@
     "editor.fontSize": 12,
     "editor.highlightActiveIndentGuide": false,
     "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": false,
     "editor.renderIndentGuides": false,
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "none",
     "editor.rulers": [
         100
     ],
@@ -37,6 +38,7 @@
     "explorer.autoReveal": false,
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
+    //"explorer.decorations.badges": false,
     "files.associations": {
         "*.gni": "gn",
         "*.rst": "restructuredtext"
@@ -47,6 +49,7 @@
     "files.trimTrailingWhitespace": true,
     "gnformat.path": "/Users/palchak/.local/bin/gn",
     "kconfig.zephyr.base": "/usr/local/google/home/palchak/projects/pointy/boosty/third_party/nordic/ncs_v1.5.1/zephyr",
+    "problems.decorations.enabled": false,
     "python.defaultInterpreterPath": "/usr/bin/python3",
     "python.pythonPath": "python3",
     "remote.SSH.configFile": "~/.ssh/config",
@@ -83,8 +86,17 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
+    "workbench.editor.focusRecentEditorAfterClose": false,
+    "workbench.editor.closeEmptyGroups": false,
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 16,
     "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorTheme": "Solarized Dark+"
+    "workbench.colorTheme": "Solarized Dark+",
+    "redhat.telemetry.enabled": false,
+    "kconfig.zephyr.board": {
+        "board": "pca10040"
+    },
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.suggest.showWords": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false
 }

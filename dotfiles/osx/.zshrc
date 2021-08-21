@@ -79,6 +79,7 @@ export PATH
 export ADB_VENDOR_KEYS='/Users/palchak/firmware/android/adb_keys'
 export MAKEFLAGS="-j"
 export CMAKE_GENERATOR="Ninja"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Automatically run `ls` after changing a directory
 autoload add-zsh-hook
