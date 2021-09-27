@@ -1,5 +1,5 @@
 {
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100}",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100, AllowShortBlocksOnASingleLine: \"Empty\", AllowShortFunctionsOnASingleLine: \"Empty\", AllowShortEnumsOnASingleLine: false, AllowShortIfStatementsOnASingleLine: \"Never\", AllowShortLoopsOnASingleLine: false, AccessModifierOffset: -4}",
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
     "C_Cpp.clang_format_style": "file",
     "C_Cpp.default.cStandard": "c11",
@@ -8,8 +8,18 @@
     "C_Cpp.errorSquiggles": "Enabled",
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "C_Cpp.updateChannel": "Insiders",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
     "auto-comment-blocks.singleLineBlockOnEnter": true,
+    "cmake.configureOnOpen": false,
+    "commit-message-editor.view.rulers": [
+        50,
+        72
+    ],
+    "commit-message-editor.view.useMonospaceEditor": true,
     "cortex-debug.enableTelemetry": false,
+    "editor.acceptSuggestionOnEnter": "on",
     "editor.fontSize": 12,
     "editor.highlightActiveIndentGuide": false,
     "editor.minimap.enabled": false,
@@ -20,6 +30,7 @@
     "editor.rulers": [
         100
     ],
+    "editor.snippetSuggestions": "top",
     "editor.tabSize": 4,
     "editor.wrappingIndent": "indent",
     "explorer.autoReveal": false,

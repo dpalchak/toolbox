@@ -215,5 +215,36 @@
     "key": "ctrl+shift+space",
     "command": "workbench.files.action.showActiveFileInExplorer",
     "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "editor.action.jumpToBracket",
+        "cursorWordEndRight",
+      ]
+    },
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "extension.paste-indent",
+    "when": "editorTextFocus && !editorReadOnly"
   }
 ]
