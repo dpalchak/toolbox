@@ -105,6 +105,7 @@ alias ls="ls -F --color=auto"
 alias ll="ls -lFh --color=auto"
 alias la="ls -laFh --color=auto"
 
+alias cd="cd -P"
 alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
@@ -125,6 +126,9 @@ alias lsdfu="dfu-util -l"
 alias owns="dpkg -S"
 
 alias ccalc="wine \"c:\Program Files (x86)\Console Calculator\CCalc.exe\""
+
+alias clearb="printf '\033[2J\033[3J\033[H'"
+alias clb="clearb"
 
 # gnome-terminal generates some annoying console spew, so silence it
 alias gnome-terminal="gnome-terminal 2>/dev/null"
