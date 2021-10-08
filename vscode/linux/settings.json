@@ -63,13 +63,22 @@
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.editorAssociations": [
-        {
-            "filenamePattern": "*.ipynb",
-            "viewType": "jupyter-notebook"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 16,
-    "workbench.tree.renderIndentGuides": "always"
+    "workbench.tree.renderIndentGuides": "always",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300000,
+    "debug.toolBarLocation": "docked",
+    "local-history.saveDelay": 300,
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.associations": {
+        "*.cfg": "plaintext"
+    },
+    "files.exclude": {
+        "**/.history": true
+    }
 }
