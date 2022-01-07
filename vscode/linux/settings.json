@@ -80,5 +80,21 @@
     },
     "files.exclude": {
         "**/.history": true
-    }
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.hover.delay": 500,
+    "editor.quickSuggestionsDelay": 500,
+    "testMate.cpp.log.userId": "d68eacf3c2366160bd4e10867160e205a8582935",
+    "testMate.cpp.log.logSentry": "disable_3",
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "pattern": "${workspaceFolder}/firmware/app/libboosty_tests/BUILD.linux/boosty.elf",
+            "catch2": { "ignoreTestEnumerationStdErr": true}
+        }
+    ],
+    "tabnine.experimentalAutoImports": false,
+    "cSpell.allowCompoundWords": true,
+    "scm.diffDecorationsGutterWidth": 2,
+    "cSpell.diagnosticLevel": "Hint",
+    "C_Cpp.inactiveRegionOpacity": 0.75,
 }

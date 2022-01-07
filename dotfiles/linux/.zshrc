@@ -5,6 +5,7 @@
 # functions, options, key bindings, etc.
 #
 
+zmodload zsh/zprof
 
 # source profile like .bashrc
 if [ -f /etc/profile ]; then
@@ -24,6 +25,7 @@ unsetopt share_history
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename "${HOME}/.zshrc"
+zstyle ':prezto:*:*' case-sensitive 'yes'
 
 autoload -Uz compinit
 compinit
@@ -37,7 +39,7 @@ fi
 # Customize to your needs...
 
 setopt appendhistory autocd extendedglob no_share_history
-unsetopt share_history
+unsetopt share_history correct
 
 prompt sorin
 
@@ -47,6 +49,8 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' users
 zstyle ':completion:*' completer _complete _match
+# Allow for partial word completion, but no (stupid) substring completion
+zstyle ':completion:*' matcher-list 'l:|=* r:|=*'
 setopt auto_list nolist_ambiguous nomenu_complete glob_complete
 
 # Disable underlining in syntax highlighter
@@ -58,6 +62,10 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[cursor]=underline
+
+# oh-my-zsh seems to enable this by default, not desired for
+# workflow of controlling terminal title.
+DISABLE_AUTO_TITLE="true"
 
 setopt rm_star_silent
 setopt clobber
@@ -95,6 +103,11 @@ findreplace() {
   echo "'${cmd}'"
   eval ${cmd}
 }
+
+title() {
+  set-window-title $@
+}
+
 
 alias cmaked="cmake -BBUILD -H."
 alias cmakedc="rm -rf BUILD && cmaked"
@@ -351,6 +364,7 @@ alias gra='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase --interactive'
 alias grbs='git rebase --skip'
+alias grbsq='git -c sequence.editor=: rebase -i --autosquash'
 
 # Reset (re)
 alias gre='git reset'
