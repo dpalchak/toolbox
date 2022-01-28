@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#git autofix
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $(basename $0) <Commit SHA1>"
+    exit 1
+fi
+
+TARGET_SHA=$1
+git commit --fixup=${TARGET_SHA}
+git -c sequence.editor=: rebase -i --autosquash --autostash "${TARGET_SHA}^"
