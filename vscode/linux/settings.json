@@ -97,4 +97,7 @@
     "scm.diffDecorationsGutterWidth": 2,
     "cSpell.diagnosticLevel": "Hint",
     "C_Cpp.inactiveRegionOpacity": 0.75,
+    "editor.inlineSuggest.mode": "prefix",
+    "C_Cpp.intelliSenseUpdateDelay": 1500,
+    "editor.suggest.showWords": false,
 }

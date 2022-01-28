@@ -246,5 +246,18 @@
     "key": "ctrl+shift+v",
     "command": "extension.paste-indent",
     "when": "editorTextFocus && !editorReadOnly"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.files.saveFiles"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-workbench.action.files.saveLocalFile",
+    "when": "remoteFileDialogVisible"
   }
 ]
