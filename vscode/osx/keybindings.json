@@ -3489,14 +3489,6 @@
         }
     },
     {
-        "key": "shift+end",
-        "command": "cursorEndSelect",
-        "when": "textInputFocus",
-        "args": {
-            "sticky": false
-        }
-    },
-    {
         "key": "home",
         "command": "cursorHome",
         "when": "textInputFocus"
@@ -3783,9 +3775,9 @@
         "when": "editorTextFocus && selectionAnchorSet"
     },
     {
-        "key": "ctrl+f2",
+        "key": "cmd+f2",
         "command": "editor.action.changeAll",
-        "when": "editorTextFocus && editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "ctrl+c",
@@ -3798,6 +3790,11 @@
     {
         "key": "shift+insert",
         "command": "editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "pasteAndIndent.action",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "ctrl+v",
@@ -3824,7 +3821,7 @@
         "when": "editorTextFocus && !editorReadonly && editorLangId == 'jsonc'"
     },
     {
-        "key": "ctrl+shift+k",
+        "key": "ctrl+d",
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     },
@@ -4065,11 +4062,6 @@
     },
     {
         "key": "f12",
-        "command": "editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "ctrl+k f12",
         "command": "editor.action.revealDefinitionAside",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
@@ -6214,10 +6206,6 @@
         "command": "workbench.view.explorer"
     },
     {
-        "key": "ctrl+shift+x",
-        "command": "workbench.view.extensions"
-    },
-    {
         "key": "ctrl+shift+g",
         "command": "workbench.view.scm"
     },
@@ -6676,5 +6664,42 @@
     {
         "key": "ctrl+l",
         "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "shift+cmd+right",
+        "command": "cursorEndSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "cmd+right",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "cmd+left",
+        "command": "cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+cmd+left",
+        "command": "cursorHomeSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+end",
+        "command": "cursorEndSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "alt+o",
+        "command": "togglehs.toggleHS"
+    },
+    {
+        "key": "f4",
+        "command": "-togglehs.toggleHS"
     }
 ]

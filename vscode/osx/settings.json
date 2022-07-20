@@ -1,4 +1,5 @@
 {
+    "breadcrumbs.symbolSortOrder": "type",
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100}",
     "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
     "C_Cpp.clang_format_style": "file",
@@ -20,14 +21,17 @@
     "cmake.defaultVariants": {},
     "cmake.generator": "Ninja",
     "cmake.useCMakeServer": false,
+    "commit-message-editor.view.useMonospaceEditor": true,
+    "commit-message-editor.view.rulers":[
+        50,
+        72
+    ],
     "cortex-debug.enableTelemetry": false,
     "editor.autoClosingOvertype": "always",
     "editor.detectIndentation": false,
     "editor.fontSize": 12,
-    "editor.highlightActiveIndentGuide": false,
     "editor.minimap.enabled": false,
     "editor.occurrencesHighlight": false,
-    "editor.renderIndentGuides": false,
     "editor.renderWhitespace": "none",
     "editor.rulers": [
         100
@@ -69,14 +73,13 @@
     "update.showReleaseNotes": false,
     "window.restoreWindows": "none",
     "window.title": "${dirty}${activeEditorMedium}",
-    "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
         "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
         "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
         "editor.lineHighlightBackground": "#303040",
-        "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
+        "editor.selectionBackground": "#1273c2e6", //Currently SELECTED text
         "editor.selectionHighlightBackground": "#01832256", //Same content as selection
-        "editor.selectionHighlightBorder": "#FFFA",
+        "editor.selectionHighlightBorder": "#ffffff00",
         "editorGutter.background": "#040404",
         "gitDecoration.ignoredResourceForeground": "#a4a4a4",
         "numberedBookmarks.lineBackground": "#007700"
@@ -98,5 +101,28 @@
     },
     "editor.acceptSuggestionOnEnter": "smart",
     "editor.suggest.showWords": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "local-history.saveDelay": 1200,
+    "local-history.treeLocation": "localHistory",
+    "debug.toolBarLocation": "docked",
+    "terminal.integrated.scrollback": 10000,
+    "files.exclude": {
+        "**/.githooks": true,
+        "**/.history": true
+    },
+    "scm.diffDecorations": "none",
+    "files.watcherExclude": {
+        "**/BUILD.*/**": true,
+        "**/BUILD/**": true,
+        "**/third_party/**": true
+    },
+    "devicetree.defaultBoard": "oolong_nrf9160ns",
+    "scm.diffDecorationsGutterAction": "none",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300000,
+    "cSpell.diagnosticLevel": "Hint",
+    "editor.guides.indentation": false,
+    "editor.guides.highlightActiveIndentation": false,
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "editor.inlayHints.enabled": "offUnlessPressed"
 }
