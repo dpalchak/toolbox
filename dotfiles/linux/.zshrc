@@ -25,5 +25,5 @@ if [ -f ${HOME}/wearables/ecad/scripts/edatools-deb-palchak ]; then
 	source ${HOME}/wearables/ecad/scripts/edatools-deb-palchak
 fi
 
-export MGLS_LICENSE_FILE="${HOME}/.lattice/radiant/2.2/license/license.dat"
-export MODELSIM_TCL="${HOME}/.config/modelsim.tcl"
+export MGLS_LICENSE_FILE="${HOME}/.lattice/license.dat"
+export MODELSIM_TCL="${HOME}/toolbox/dotfiles/linux/modelsim.tcl"
