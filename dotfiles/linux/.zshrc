@@ -7,7 +7,7 @@
 
 source "${HOME}/.zshrc_common"
 
-alias ls="ls -F --color=auto"
+alias ls="ls -CF --color=auto"
 alias ll="ls -lFh --color=auto"
 alias la="ls -laFh --color=auto"
 
