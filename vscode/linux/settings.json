@@ -20,11 +20,9 @@
     "cortex-debug.enableTelemetry": false,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.fontSize": 12,
-    "editor.highlightActiveIndentGuide": false,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
     "editor.occurrencesHighlight": false,
-    "editor.renderIndentGuides": false,
     "editor.renderWhitespace": "all",
     "editor.rulers": [
         100
@@ -130,4 +128,7 @@
     "C_Cpp.loggingLevel": "Debug",
     "C_Cpp.intelliSenseEngine": "Disabled",
     "editor.inlayHints.enabled": false,
+    "editor.guides.indentation": false,
+    "editor.guides.highlightActiveIndentation": false,
+    "window.restoreWindows": "none",
 }
