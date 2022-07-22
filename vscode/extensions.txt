@@ -1,7 +1,49 @@
-alphabotsec.vscode-eclipse-keybindings-0.10.0/
-austin.code-gnu-global-0.2.2/
-bbenoist.togglehs-0.1.2/
-dan-c-underwood.arm-0.5.0/
-marus25.cortex-debug-0.3.1/
-ms-python.python-2019.6.24221/
-ms-vscode.cpptools-0.24.0/
+code --install-extension adam-bender.commit-message-editor
+code --install-extension albert.TabOut
+code --install-extension alexander-yu.vscode-open
+code --install-extension bbenoist.togglehs
+code --install-extension betwo.vscode-linux-binary-preview
+code --install-extension bkromhout.vscode-tcl
+code --install-extension bungcip.better-toml
+code --install-extension cheshirekow.cmake-format
+code --install-extension dalance.svls-vscode
+code --install-extension dan-c-underwood.arm
+code --install-extension donjayamanne.githistory
+code --install-extension EdgardMessias.clipboard-manager
+code --install-extension eirikpre.systemverilog
+code --install-extension Exelord.git-commits
+code --install-extension Fr43nk.seito-openfile
+code --install-extension hbenl.vscode-test-explorer
+code --install-extension ionutvmi.path-autocomplete
+code --install-extension kahole.magit
+code --install-extension kevinkyang.auto-comment-blocks
+code --install-extension kirozen.dokuwiki
+code --install-extension lesgrieve.paste-indent
+code --install-extension llvm-vs-code-extensions.vscode-clangd
+code --install-extension marus25.cortex-debug
+code --install-extension matepek.vscode-catch2-test-adapter
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-toolsai.jupyter-keymap
+code --install-extension ms-vscode.cmake-tools
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.test-adapter-converter
+code --install-extension mshr-h.veriloghdl
+code --install-extension npclaudiu.vscode-gn
+code --install-extension richie5um2.vscode-sort-json
+code --install-extension ryanolsonx.solarized
+code --install-extension ryuta46.multi-command
+code --install-extension stkb.rewrap
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension TabNine.tabnine-vscode
+code --install-extension tdennis4496.cmantic
+code --install-extension trond-snekvik.devicetree
+code --install-extension trond-snekvik.gnu-mapfiles
+code --install-extension trond-snekvik.kconfig-lang
+code --install-extension twxs.cmake
+code --install-extension xyz.local-history
+code --install-extension YuTengjing.open-in-external-app
+code --install-extension ZixuanWang.linkerscript
+code --install-extension zxh404.vscode-proto3
