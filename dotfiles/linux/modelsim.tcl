@@ -1,5 +1,5 @@
 proc external_editor {filename linenumber} {
-	exec code -g "$filename:$linenumber" &
+	exec code-helper.sh -g "$filename:$linenumber" &
 	return
 }
 

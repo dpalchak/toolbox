@@ -100,6 +100,35 @@ title() {
   set-window-title $@
 }
 
+# Set an alias for opening a file in vscode iff we're in an SSH session
+if [[ -n ${SSH_CLIENT} ]]
+then
+  if [[ -z ${VSCODE_IPC_HOOK_CLI} ]]
+  then
+    local socket=$(echo /run/user/$UID/vscode-ipc-*.sock(=ocNY1))
+    if [[ -n ${socket} ]]
+    then
+      export VSCODE_IPC_HOOK_CLI="${socket}"
+    fi
+  fi
+
+  # Look for a launch script if there's an IPC socket
+  if [[ -n ${VSCODE_IPC_HOOK_CLI} ]]
+  then
+    local script=$(echo ~/.vscode-server/bin/*/bin/remote-cli/code(*ocNY1))
+    if [[ -n ${script} ]]
+    then
+      export VSCODE_HELPER_SCRIPT="${script}"
+    fi
+  fi
+
+  # Redirect code via an alias if there's an IPC socket and a helper script
+  if [[ (-n "${VSCODE_IPC_HOOK_CLI}") && (-n "${VSCODE_HELPER_SCRIPT}") ]]
+  then
+    alias code="${VSCODE_HELPER_SCRIPT}"
+  fi
+fi
+
 
 alias cmaked="cmake -BBUILD -H."
 alias cmakedc="rm -rf BUILD && cmaked"
