@@ -23,7 +23,7 @@
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
     "editor.occurrencesHighlight": false,
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "trailing",
     "editor.rulers": [
         100
     ],
@@ -111,7 +111,6 @@
         "**/estoppel":true,
         "**/BUILD*": true,
         "**/__bvbe":true,
-        "**/gateware": true,
         "**/.history": true
     },
     "clipboard-manager.maxClips": 25,
@@ -131,4 +130,10 @@
     "editor.guides.indentation": false,
     "editor.guides.highlightActiveIndentation": false,
     "window.restoreWindows": "none",
+    "workbench.colorTheme": "Solarized Dark+",
+    "remote.SSH.connectTimeout": 60,
+    "window.zoomLevel": 1,
+    "security.workspace.trust.enabled": false,
+    "devicetree.zephyr": "/home/palchak/projects/pointy/boosty/third_party/nordic/connect_sdk/zephyr",
+    "devicetree.defaultBoard": "matcha_ns",
 }
