@@ -73,7 +73,7 @@ bindkey '\e[4~' end-of-line
 bindkey '^R' history-incremental-search-backward
 
 # Note that 'path' is intentionally lower-case, as it is an array (not a string)
-path=("${HOME}/.local/bin" $path)
+path=("${HOME}/.local/bin" "${HOME}/.cargo/bin" $path)
 export PATH
 
 export ADB_VENDOR_KEYS="${HOME}/firmware/android/adb_keys"
@@ -153,6 +153,11 @@ alias lsdfu="dfu-util -l"
 
 alias clearb="printf '\033[2J\033[3J\033[H'"
 alias clb="clearb"
+
+# Open SSH master connection
+alias sshm="ssh -MNnfT"
+alias sshms="ssh -q -O check"
+alias sshmx="ssh -q -O exit"
 
 # Git aliases
 alias g='git'

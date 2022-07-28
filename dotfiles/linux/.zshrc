@@ -17,6 +17,7 @@ alias ccalc="wine \"c:\Program Files (x86)\Console Calculator\CCalc.exe\""
 # gnome-terminal generates some annoying console spew, so silence it
 alias gnome-terminal="gnome-terminal 2>/dev/null"
 
+alias xpra-mtv="xpra attach --ssh=\"ssh -q\" ssh:palchak@palchak.mtv.corp.google.com:42"
 
 # Enable EE CAD tools (go/ee-cad)
 export CDSHOME="${HOME}/wearables/ecad"
