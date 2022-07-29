@@ -365,6 +365,7 @@ alias gpa='git push --all'
 alias gpat='git push --all && git push --tags'
 alias gpt='git push --tags'
 alias gpuc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+alias gpm='git push . origin/main:main'
 
 # Pull (pl)
 alias gpl='git pull'
