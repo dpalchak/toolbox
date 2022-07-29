@@ -207,6 +207,7 @@ alias gcmSl='git commit -S --all --verbose'
 alias gcmSm='git commit -S --message'
 alias gcmSar='git commit -S --amend --reuse-message HEAD'
 alias gcmSlar='git commit -S --all --amend --reuse-message HEAD'
+alias gcmfx='(){git commit --fixup=$1}'
 
 # Cherry Pick (cp)
 alias gcp='git cherry-pick --ff'
@@ -378,6 +379,7 @@ alias gra='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase --interactive'
 alias grbs='git rebase --skip'
+alias grbfx='git rebase -i --autosquash'
 alias grbsq='git -c sequence.editor=: rebase -i --autosquash'
 
 # Reset (re)
