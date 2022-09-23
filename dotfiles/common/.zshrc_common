@@ -187,7 +187,8 @@ alias gbx='git branch --delete'
 alias gbX='git branch --delete --force'
 
 # Clean (cl)
-alias gcl='git clean -n'
+alias gcl='git clean'
+alias gcln='git clean -n'
 alias gclf='git clean -f'
 
 # Clone (clo)
@@ -381,6 +382,7 @@ alias grbi='git rebase --interactive'
 alias grbs='git rebase --skip'
 alias grbfx='git rebase -i --autosquash'
 alias grbsq='git -c sequence.editor=: rebase -i --autosquash'
+alias grbp='git rebase -x "bash -c \"git log --oneline -1 ; read\""'
 
 # Reset (re)
 alias gre='git reset'
