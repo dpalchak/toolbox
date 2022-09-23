@@ -8,7 +8,7 @@
     "C_Cpp.errorSquiggles": "Enabled",
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     },
     "auto-comment-blocks.singleLineBlockOnEnter": true,
     "cmake.configureOnOpen": false,
@@ -72,7 +72,8 @@
     "explorer.confirmDelete": false,
     "security.workspace.trust.untrustedFiles": "open",
     "files.associations": {
-        "*.cfg": "plaintext"
+        "*.cfg": "plaintext",
+        "*.overlay": "dts"
     },
     "files.exclude": {
         "**/.history": true
@@ -95,7 +96,6 @@
     "C_Cpp.inactiveRegionOpacity": 0.75,
     "editor.inlineSuggest.mode": "prefix",
     "C_Cpp.intelliSenseUpdateDelay": 1500,
-    "editor.suggest.showWords": false,
     "merge-conflict.decorators.enabled": false,
     "editor.showFoldingControls": "always",
     "scm.diffDecorationsGutterVisibility": "hover",
@@ -121,7 +121,6 @@
     "C_Cpp.intelliSenseCacheSize": 20000,
     "C_Cpp.intelliSenseMemoryLimit": 8192,
     "C_Cpp.dimInactiveRegions": false,
-    "editor.suggest.showConstants": false,
     "editor.suggest.showColors": false,
     "editor.suggest.showDeprecated": false,
     "C_Cpp.loggingLevel": "Debug",
@@ -130,10 +129,14 @@
     "editor.guides.indentation": false,
     "editor.guides.highlightActiveIndentation": false,
     "window.restoreWindows": "none",
-    "workbench.colorTheme": "Solarized Dark+",
     "remote.SSH.connectTimeout": 60,
     "window.zoomLevel": 1,
     "security.workspace.trust.enabled": false,
     "devicetree.zephyr": "/home/palchak/projects/pointy/boosty/third_party/nordic/connect_sdk/zephyr",
     "devicetree.defaultBoard": "matcha_ns",
+    "editor.suggest.showConstants": false,
+    "editor.suggest.showWords": false,
+    "editor.quickSuggestions": {
+        "other": "off"
+    },
 }
