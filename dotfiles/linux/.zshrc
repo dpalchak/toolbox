@@ -26,5 +26,14 @@ if [ -f ${HOME}/wearables/ecad/scripts/edatools-deb-palchak ]; then
 	source ${HOME}/wearables/ecad/scripts/edatools-deb-palchak
 fi
 
+# Enable use of fig
+source /etc/bash_completion.d/hgd
+source /etc/bash_completion.d/g4d
+
 export MGLS_LICENSE_FILE="${HOME}/.lattice/license.dat"
 export MODELSIM_TCL="${HOME}/toolbox/dotfiles/linux/modelsim.tcl"
+
+# Activate a default Python virtual environment
+VIRTUAL_ENV_DISABLE_PROMPT=1
+source ~/.venv/palchak/bin/activate
+unset VIRTUAL_ENV_DISABLE_PROMPT

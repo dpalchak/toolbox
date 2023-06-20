@@ -142,6 +142,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias cdboosty="cd ~/projects/pointy/boosty"
+alias njp="nrfjprog"
 
 # Change to the root directory of the current git repo
 alias gittop='git rev-parse --show-toplevel'
@@ -376,8 +377,9 @@ alias gplpu='git pull origin "$(git-branch-current 2> /dev/null)" && git push or
 
 # Rebase (rb)
 alias grb='git rebase'
-alias gra='git rebase --abort'
-alias grbc='git rebase --continue'
+alias grba='git rebase --abort'
+alias grbc='GIT_EDITOR=true git rebase --continue'
+alias grbec='git rebase --continue'
 alias grbi='git rebase --interactive'
 alias grbs='git rebase --skip'
 alias grbfx='git rebase -i --autosquash'
