@@ -141,7 +141,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias cdboosty="cd ~/projects/pointy/boosty"
+alias garden="cd ~/projects/pointy/teagarden"
 alias njp="nrfjprog"
 
 # Change to the root directory of the current git repo
