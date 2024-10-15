@@ -19,6 +19,9 @@
 		"prefix": "class",
 		"body": [
 			"class $1 {",
+			"public:",
+			"\n",
+			"private:",
 			"\t$0",
 			"};"
 		],

@@ -60,10 +60,6 @@
     "command": "workbench.action.editorLayoutSingle"
   },
   {
-    "key": "ctrl+shift+-",
-    "command": "workbench.action.zoomOut"
-  },
-  {
     "key": "ctrl+-",
     "command": "-workbench.action.zoomOut"
   },
@@ -108,10 +104,6 @@
     "key": "ctrl+f12",
     "command": "-editor.action.goToImplementation",
     "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "ctrl+-",
-    "command": "workbench.action.navigateBack"
   },
   {
     "key": "ctrl+alt+-",
@@ -284,5 +276,17 @@
     "key": "ctrl+shift+v",
     "command": "-clipboard-manager.editor.pickAndPaste",
     "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.navigateToLastEditLocation"
+  },
+  {
+    "key": "ctrl+k ctrl+q",
+    "command": "-workbench.action.navigateToLastEditLocation"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "workbench.action.navigateBack"
   }
 ]
