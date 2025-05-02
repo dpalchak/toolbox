@@ -4,7 +4,6 @@
 # It should contain commands to set up aliases,
 # functions, options, key bindings, etc.
 #
-
 source "${HOME}/.zshrc_common"
 
 alias ls="ls -CF --color=auto"

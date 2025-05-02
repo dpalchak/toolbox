@@ -12,7 +12,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory autocd extendedglob no_share_history
-unsetopt share_history
+unsetopt share_history path_dirs
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -31,19 +31,20 @@ fi
 # Customize to your needs...
 
 setopt appendhistory autocd extendedglob no_share_history
-unsetopt share_history correct
+unsetopt share_history correct path_dirs
 
 prompt sorin
 
 # This way the completion script does not have to parse Bazel's options
-# # repeatedly.  The directory in cache-path must be created manually.
+# repeatedly.  The directory in cache-path must be created manually.
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' users
 zstyle ':completion:*' completer _complete _match
 # Allow for partial word completion, but no (stupid) substring completion
-zstyle ':completion:*' matcher-list 'l:|=* r:|=*'
-setopt auto_list nolist_ambiguous nomenu_complete glob_complete
+# zstyle ':completion:*' matcher-list 'l:|=* r:|=*'
+# zstyle ':completion:*' matcher-list 'r:|=*'
+setopt auto_list nolist_ambiguous noauto_menu nomenu_complete glob_complete
 
 # Disable underlining in syntax highlighter
 # To differentiate aliases from other command types
@@ -105,7 +106,7 @@ if [[ -n ${SSH_CLIENT} ]]
 then
   if [[ -z ${VSCODE_IPC_HOOK_CLI} ]]
   then
-    local socket=$(echo /run/user/$UID/vscode-ipc-*.sock(=ocNY1))
+    local socket=$(echo /run/user/$UID/vscode-ipc-*.sock(=om[1]))
     if [[ -n ${socket} ]]
     then
       export VSCODE_IPC_HOOK_CLI="${socket}"
@@ -115,7 +116,7 @@ then
   # Look for a launch script if there's an IPC socket
   if [[ -n ${VSCODE_IPC_HOOK_CLI} ]]
   then
-    local script=$(echo ~/.vscode-server/bin/*/bin/remote-cli/code(*ocNY1))
+    local script=$(echo ~/.vscode-server/bin/*/bin/remote-cli/code(*om[1]))
     if [[ -n ${script} ]]
     then
       export VSCODE_HELPER_SCRIPT="${script}"
