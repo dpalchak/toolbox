@@ -160,5 +160,49 @@
     "editor.parameterHints.enabled": false,
     "window.confirmSaveUntitledWorkspace": false,
     "diffEditor.useInlineViewWhenSpaceIsLimited": false,
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "asn1.keywords"
+                ],
+                "settings": {
+                    "foreground": "#C586C0"
+                }
+            },
+            {
+                "scope": [
+                    "asn1.moduleName"
+                ],
+                "settings": {
+                    "foreground": "#A8962A"
+                }
+            },
+            {
+                "scope": [
+                    "asn1.typeName"
+                ],
+                "settings": {
+                    "foreground": "#d7ba7d"
+                }
+            },
+            {
+                "scope": [
+                    "asn1.identifier"
+                ],
+                "settings": {
+                    "foreground": "#4CC1BB"
+                }
+            },
+            {
+                "scope": [
+                    "asn1.openTypeIdentifier"
+                ],
+                "settings": {
+                    "foreground": "#696969"
+                }
+            }
+        ]
+    }
 }
