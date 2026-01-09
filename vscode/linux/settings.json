@@ -133,6 +133,7 @@
         "**/.history": true
     },
     "files.trimTrailingWhitespace": true,
+    "geminicodeassist.displayInlineContextHint": false,
     "geminicodeassist.enableTelemetry": false,
     "geminicodeassist.inlineSuggestions.nextEditPredictions": true,
     "geminicodeassist.project": "aipp-internal-testing",
