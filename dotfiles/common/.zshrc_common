@@ -141,6 +141,8 @@ alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias cdlatest='cd *(/[-1])'
+
 
 alias garden="cd ~/projects/pointy/teagarden"
 alias njp="nrfjprog"
@@ -436,3 +438,6 @@ alias gSw='git stash save --include-untracked --keep-index'
 # Tag (t)
 alias gt='git tag'
 alias gtl='git tag -l'
+
+
+alias gemini='/google/bin/releases/gemini-cli/tools/gemini --proxy=false'

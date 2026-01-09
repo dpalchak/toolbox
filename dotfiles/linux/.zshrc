@@ -25,9 +25,14 @@ if [ -f ${HOME}/wearables/ecad/scripts/edatools-deb-palchak ]; then
 	source ${HOME}/wearables/ecad/scripts/edatools-deb-palchak
 fi
 
-# Enable use of fig
-source /etc/bash_completion.d/hgd
-source /etc/bash_completion.d/g4d
+# Enable use of fig and g4
+if [[ -f "/etc/bash_completion.d/hgd" ]]; then
+	source /etc/bash_completion.d/hgd
+fi
+
+if [[ -f "/etc/bash_completion.d/g4d" ]]; then
+	source /etc/bash_completion.d/g4d
+fi
 
 export MGLS_LICENSE_FILE="${HOME}/.lattice/license.dat"
 export MODELSIM_TCL="${HOME}/toolbox/dotfiles/linux/modelsim.tcl"
