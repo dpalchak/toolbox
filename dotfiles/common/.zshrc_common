@@ -81,6 +81,9 @@ export ADB_VENDOR_KEYS="${HOME}/firmware/android/adb_keys"
 export MAKEFLAGS="-j"
 export CMAKE_GENERATOR="Ninja"
 
+export WAYMO_EMBEDDED_PATH="google3/waymo/embedded"
+export CAR_EMBEDDED_PATH="google3/third_party/car/embedded/"
+
 # Automatically run `ls` after changing a directory
 autoload add-zsh-hook
 launch_autols() {
@@ -101,35 +104,28 @@ title() {
   set-window-title $@
 }
 
-# Set an alias for opening a file in vscode iff we're in an SSH session
-if [[ -n ${SSH_CLIENT} ]]
-then
-  if [[ -z ${VSCODE_IPC_HOOK_CLI} ]]
-  then
-    local socket=$(echo /run/user/$UID/vscode-ipc-*.sock(=om[1]))
-    if [[ -n ${socket} ]]
-    then
-      export VSCODE_IPC_HOOK_CLI="${socket}"
-    fi
+codealias() {
+  local socket=$(echo /run/user/$UID/vscode-ipc-*.sock(=om[1]))
+  if [[ -z ${socket} ]]; then
+    return
   fi
+  export VSCODE_IPC_HOOK_CLI="${socket}"
 
   # Look for a launch script if there's an IPC socket
-  if [[ -n ${VSCODE_IPC_HOOK_CLI} ]]
-  then
-    local script=$(echo ~/.vscode-server/bin/*/bin/remote-cli/code(*om[1]))
-    if [[ -n ${script} ]]
-    then
-      export VSCODE_HELPER_SCRIPT="${script}"
-    fi
+  local script=$(echo ~/.vscode-server/bin/*/bin/remote-cli/code(*om[1]))
+  if [[ -z ${VSCODE_IPC_HOOK_CLI} ]]; then
+    return
   fi
+  export VSCODE_HELPER_SCRIPT="${script}"
 
   # Redirect code via an alias if there's an IPC socket and a helper script
-  if [[ (-n "${VSCODE_IPC_HOOK_CLI}") && (-n "${VSCODE_HELPER_SCRIPT}") ]]
-  then
-    alias code="${VSCODE_HELPER_SCRIPT}"
-  fi
-fi
+  alias code="${VSCODE_HELPER_SCRIPT}"
+}
 
+# Set an alias for opening a file in vscode iff we're in an SSH session
+if [[ -n ${SSH_CLIENT} ]]; then
+  codealias
+fi
 
 alias cmaked="cmake -BBUILD -H."
 alias cmakedc="rm -rf BUILD && cmaked"
@@ -145,6 +141,7 @@ alias cdlatest='cd *(/[-1])'
 
 
 alias garden="cd ~/projects/pointy/teagarden"
+alias waymod="cd ~/projects/waymo"
 alias njp="nrfjprog"
 
 # Change to the root directory of the current git repo
@@ -441,3 +438,53 @@ alias gtl='git tag -l'
 
 
 alias gemini='/google/bin/releases/gemini-cli/tools/gemini --proxy=false'
+
+## Jujutsu commands and aliases
+if [[ -f /etc/bash_completion.d/jjd ]]; then
+  source /etc/bash_completion.d/jjd
+fi
+
+alias waymod="cd ~/projects/waymo"
+
+echo_run_cmd() {
+  echo "'${@}'"
+  eval ${@}
+}
+
+alias lsws='jj piper citc list'
+
+cdws() {
+  root=$(citc_root $1)
+  if [[ ! -z "${root}" ]]; then
+    cd "${root}"
+  fi
+}
+
+citc_root() {
+  echo $(jj piper jjd --quiet ${1} 2>/dev/null)
+}
+
+make_citc() {
+  if (( $# != 1 )) then
+    echo usage: $0 WORKSPACE_NAME
+  fi
+  ws_name="${1}"
+  ws_root=$(citc_root "${ws_name}")
+  if [[ ! -d "${ws_root}" ]]; then
+    jj citc init "${ws_name}"
+  fi
+  citc_root "${ws_name}"
+}
+
+makework() {
+  if (( $# != 1 )) then
+    echo usage: $0 WORKSPACE_NAME
+  fi
+  ws_name=$1
+  make_citc "${ws_name}"
+  waymo_ws_root="${HOME}/projects/waymo"
+  "${waymo_ws_root}/make_workspace.sh" "${ws_name}"
+}
+
+
+alias blaze_trybuild='blaze build --features=-layering_check'

@@ -1,38 +1,45 @@
 {
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100, AllowShortBlocksOnASingleLine: \"Empty\", AllowShortFunctionsOnASingleLine: \"Empty\", AllowShortEnumsOnASingleLine: false, AllowShortIfStatementsOnASingleLine: \"Never\", AllowShortLoopsOnASingleLine: false, AccessModifierOffset: -4}",
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
-    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 300, AllowShortBlocksOnASingleLine: \"Empty\", AllowShortFunctionsOnASingleLine: \"Empty\", AllowShortEnumsOnASingleLine: false, AllowShortIfStatementsOnASingleLine: \"Never\", AllowShortLoopsOnASingleLine: false, AccessModifierOffset: -4}",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.intelliSenseMode": "gcc-arm",
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.errorSquiggles": "Enabled",
     "C_Cpp.inactiveRegionOpacity": 0.75,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
     "C_Cpp.intelliSenseCacheSize": 20000,
-    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "C_Cpp.intelliSenseMemoryLimit": 8192,
     "C_Cpp.intelliSenseUpdateDelay": 1500,
     "C_Cpp.loggingLevel": "Debug",
     "[cpp]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+        "editor.defaultFormatter": "cider-team.vscode-ciderlsp"
     },
     "auto-comment-blocks.singleLineBlockOnEnter": true,
     "cSpell.allowCompoundWords": true,
     "cSpell.diagnosticLevel": "Hint",
+    "cSpell.enabled": false,
+    "ciderlsp.diagnostics.removeMessageRegex": "whitespace/end_of_line",
+    "clangd.path": "/usr/bin/clangd",
     "clipboard-manager.maxClips": 25,
     "clipboard-manager.moveToTop": false,
     "cmake.configureOnOpen": false,
+    "cmake.showOptionsMovedNotification": false,
     "commit-message-editor.view.rulers": [
         50,
         72
     ],
     "commit-message-editor.view.useMonospaceEditor": true,
     "cortex-debug.enableTelemetry": false,
+    "debug.focusWindowOnBreak": false,
     "debug.toolBarLocation": "docked",
     "devicetree.defaultBoard": "matcha_ns",
     "devicetree.zephyr": "/home/palchak/projects/pointy/boosty/third_party/nordic/connect_sdk/zephyr",
     "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.fontSize": 12,
     "editor.guides.highlightActiveIndentation": false,
@@ -63,105 +70,6 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.tabSize": 4,
-    "editor.wrappingIndent": "indent",
-    "explorer.autoReveal": false,
-    "explorer.compactFolders": false,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "files.associations": {
-        "*.cfg": "plaintext",
-        "*.overlay": "dts",
-        "Kconfig": "kconfig",
-        "Kconfig.*": "kconfig",
-        "*.py": "python",
-        "*.cmake": "cmake"
-    },
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 300000,
-    "files.exclude": {
-        "**/.history": true
-    },
-    "files.trimTrailingWhitespace": true,
-    "git.countBadge": "off",
-    "git.suggestSmartCommit": false,
-    "gnuGlobal.gtagsForceCpp": "Enabled",
-    "kconfig.zephyr.base": "/usr/local/google/home/palchak/projects/pointy/boosty/third_party/nordic/ncs_v1.5.1/zephyr",
-    "local-history.saveDelay": 300,
-    "merge-conflict.decorators.enabled": false,
-    "problems.decorations.enabled": false,
-    "python.languageServer": "Jedi",
-    "python.venvPath": "${workspaceFolder}/factory/",
-    "remote.SSH.connectTimeout": 60,
-    "scm.diffDecorations": "gutter",
-    "scm.diffDecorationsGutterVisibility": "hover",
-    "scm.diffDecorationsGutterWidth": 2,
-    "search.exclude": {
-        "**/__bvbe": true,
-        "**/.history": true,
-        "**/.venv": true,
-        "**/*.code-search": true,
-        "**/*.orig": true,
-        "**/*.rst": true,
-        "**/bower_components": true,
-        "**/BUILD*": true,
-        "**/estoppel": true,
-        "**/node_modules": true,
-        "**/prebuilt": true
-    },
-    "search.useIgnoreFiles": false,
-    "security.workspace.trust.enabled": false,
-    "security.workspace.trust.untrustedFiles": "open",
-    "tabnine.experimentalAutoImports": false,
-    "telemetry.telemetryLevel": "off",
-    "terminal.integrated.fontFamily": "Courier New",
-    "testMate.cpp.log.logSentry": "disable_3",
-    "testMate.cpp.log.userId": "d68eacf3c2366160bd4e10867160e205a8582935",
-    "testMate.cpp.test.advancedExecutables": [
-        {
-            "catch2": {
-                "ignoreTestEnumerationStdErr": true
-            },
-            "pattern": "${workspaceFolder}/firmware/app/libboosty_tests/BUILD.linux/boosty.elf"
-        }
-    ],
-    "testing.gutterEnabled": false,
-    "update.mode": "manual",
-    "update.showReleaseNotes": false,
-    "window.restoreWindows": "none",
-    "window.title": "${dirty}${activeEditorMedium}",
-    "window.zoomLevel": 1,
-    "workbench.colorCustomizations": {
-        // "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
-        // "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
-        // "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
-        // "editor.selectionHighlightBackground": "#01832256", //Same content as selection
-        "editor.lineHighlightBackground": "#303040",
-        "editor.selectionHighlightBorder": "#FFF6",
-        "editorGutter.background": "#040404",
-        "gitDecoration.ignoredResourceForeground": "#a4a4a4",
-        "numberedBookmarks.lineBackground": "#007700"
-    },
-    "workbench.editor.closeEmptyGroups": false,
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.editor.untitled.hint": "hidden",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "workbench.startupEditor": "none",
-    "workbench.tree.indent": 16,
-    "workbench.tree.renderIndentGuides": "always",
-    "clangd.path": "/usr/bin/clangd",
-    "debug.focusWindowOnBreak": false,
-    "workbench.editor.focusRecentEditorAfterClose": false,
-    "cmake.showOptionsMovedNotification": false,
-    "workbench.editor.empty.hint": "hidden",
-    "scm.showIncomingChanges": "never",
-    "scm.showOutgoingChanges": "never",
-    "editor.parameterHints.enabled": false,
-    "window.confirmSaveUntitledWorkspace": false,
-    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
-    "cSpell.enabled": false,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -206,14 +114,108 @@
             }
         ]
     },
-    "window.zoomLevel": 1,
-    "scm.repositories.selectionMode": "single",
-    "google-plugins.codelensPlugins": [],
-    "C_Cpp.inlayHints.referenceOperator.enabled": true,
-    "http.systemCertificatesNode": true,
-    "geminicodeassist.project": "aipp-internal-testing",
-    "geminicodeassist.updateChannel": "Insiders",
+    "editor.wrappingIndent": "indent",
+    "explorer.autoReveal": false,
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.cfg": "plaintext",
+        "*.cmake": "cmake",
+        "*.overlay": "dts",
+        "*.py": "python",
+        "Kconfig": "kconfig",
+        "Kconfig.*": "kconfig"
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300000,
+    "files.exclude": {
+        "**/.history": true
+    },
+    "files.trimTrailingWhitespace": true,
     "geminicodeassist.enableTelemetry": false,
     "geminicodeassist.inlineSuggestions.nextEditPredictions": true,
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "geminicodeassist.project": "aipp-internal-testing",
+    "geminicodeassist.updateChannel": "Insiders",
+    "git.countBadge": "off",
+    "git.openRepositoryInParentFolders": "never",
+    "git.suggestSmartCommit": false,
+    "gnuGlobal.gtagsForceCpp": "Enabled",
+    "google-plugins.codelensPlugins": [],
+    "http.systemCertificatesNode": true,
+    "kconfig.zephyr.base": "/usr/local/google/home/palchak/projects/pointy/boosty/third_party/nordic/ncs_v1.5.1/zephyr",
+    "local-history.saveDelay": 300,
+    "merge-conflict.decorators.enabled": false,
+    "problems.decorations.enabled": false,
+    "python.languageServer": "Jedi",
+    "python.venvPath": "${workspaceFolder}/factory/",
+    "remote.SSH.connectTimeout": 60,
+    "scm.defaultViewMode": "tree",
+    "scm.diffDecorations": "gutter",
+    "scm.diffDecorationsGutterVisibility": "hover",
+    "scm.diffDecorationsGutterWidth": 2,
+    "scm.repositories.selectionMode": "single",
+    "scm.showIncomingChanges": "never",
+    "scm.showOutgoingChanges": "never",
+    "search.exclude": {
+        "**/*.code-search": true,
+        "**/*.orig": true,
+        "**/*.rst": true,
+        "**/.history": true,
+        "**/.venv": true,
+        "**/BUILD*": true,
+        "**/__bvbe": true,
+        "**/bower_components": true,
+        "**/estoppel": true,
+        "**/node_modules": true,
+        "**/prebuilt": true
+    },
+    "search.useIgnoreFiles": false,
+    "security.workspace.trust.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "tabnine.experimentalAutoImports": false,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontFamily": "Courier New",
+    "testMate.cpp.log.logSentry": "disable_3",
+    "testMate.cpp.log.userId": "d68eacf3c2366160bd4e10867160e205a8582935",
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "catch2": {
+                "ignoreTestEnumerationStdErr": true
+            },
+            "pattern": "${workspaceFolder}/firmware/app/libboosty_tests/BUILD.linux/boosty.elf"
+        }
+    ],
+    "testing.gutterEnabled": false,
+    "update.mode": "manual",
+    "update.showReleaseNotes": false,
+    "window.confirmSaveUntitledWorkspace": false,
+    "window.restoreWindows": "none",
+    "window.title": "${dirty}${activeEditorMedium}",
+    "window.zoomLevel": 1,
+    "workbench.colorCustomizations": {
+        // "editor.findMatchBackground": "#288f8fa2", //Current SEARCH MATCH
+        // "editor.findMatchHighlightBackground": "#0c88088c", //Other SEARCH MATCHES
+        // "editor.selectionBackground": "#1273c2a1", //Currently SELECTED text
+        // "editor.selectionHighlightBackground": "#01832256", //Same content as selection
+        "editor.lineHighlightBackground": "#303040",
+        "editor.selectionHighlightBorder": "#FFF6",
+        "editorGutter.background": "#040404",
+        "gitDecoration.ignoredResourceForeground": "#a4a4a4",
+        "numberedBookmarks.lineBackground": "#007700"
+    },
+    "workbench.editor.closeEmptyGroups": false,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.focusRecentEditorAfterClose": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.externalBrowser": "chrome",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always"
 }
