@@ -112,8 +112,9 @@ codealias() {
   export VSCODE_IPC_HOOK_CLI="${socket}"
 
   # Look for a launch script if there's an IPC socket
-  local script=$(echo ~/.vscode-server/bin/*/bin/remote-cli/code(*om[1]))
-  if [[ -z ${VSCODE_IPC_HOOK_CLI} ]]; then
+  local script=$(echo ~/.vscode-server/cli/servers/*/server/bin/remote-cli/code(*om[1]))
+  if [[ -z ${script} ]]; then
+
     return
   fi
   export VSCODE_HELPER_SCRIPT="${script}"
