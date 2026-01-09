@@ -39,5 +39,8 @@ export MODELSIM_TCL="${HOME}/toolbox/dotfiles/linux/modelsim.tcl"
 
 # Activate a default Python virtual environment
 VIRTUAL_ENV_DISABLE_PROMPT=1
-source ~/.venv/palchak/bin/activate
+if [[ -f ~/.venv/palchak/bin/activate ]]; then
+	source ~/.venv/palchak/bin/activate
+fi
+
 unset VIRTUAL_ENV_DISABLE_PROMPT
