@@ -1,5 +1,5 @@
 {
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 300, AllowShortBlocksOnASingleLine: \"Empty\", AllowShortFunctionsOnASingleLine: \"Empty\", AllowShortEnumsOnASingleLine: false, AllowShortIfStatementsOnASingleLine: \"Never\", AllowShortLoopsOnASingleLine: false, AccessModifierOffset: -4}",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100, AllowShortBlocksOnASingleLine: \"Empty\", AllowShortFunctionsOnASingleLine: \"Empty\", AllowShortEnumsOnASingleLine: false, AllowShortIfStatementsOnASingleLine: \"Never\", AllowShortLoopsOnASingleLine: false, AccessModifierOffset: -4}",
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
     "C_Cpp.clang_format_style": "file",
     "C_Cpp.default.cStandard": "c11",
@@ -38,7 +38,7 @@
     "editor.guides.highlightActiveIndentation": false,
     "editor.guides.indentation": false,
     "editor.hover.delay": 500,
-    "editor.inlayHints.enabled": false,
+    "editor.inlayHints.enabled": "off",
     "editor.inlineSuggest.mode": "prefix",
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
@@ -144,6 +144,7 @@
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.untitled.hint": "hidden",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
@@ -205,6 +206,14 @@
             }
         ]
     },
-    "geminicodeassist.project": "boosty-support",
-    "git.openRepositoryInParentFolders": "never"
+    "window.zoomLevel": 1,
+    "scm.repositories.selectionMode": "single",
+    "google-plugins.codelensPlugins": [],
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "http.systemCertificatesNode": true,
+    "geminicodeassist.project": "aipp-internal-testing",
+    "geminicodeassist.updateChannel": "Insiders",
+    "geminicodeassist.enableTelemetry": false,
+    "geminicodeassist.inlineSuggestions.nextEditPredictions": true,
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }

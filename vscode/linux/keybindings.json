@@ -60,6 +60,10 @@
     "command": "workbench.action.editorLayoutSingle"
   },
   {
+    "key": "ctrl+shift+-",
+    "command": "workbench.action.zoomOut"
+  },
+  {
     "key": "ctrl+-",
     "command": "-workbench.action.zoomOut"
   },
@@ -288,5 +292,69 @@
   {
     "key": "ctrl+-",
     "command": "workbench.action.navigateBack"
-  }
+  },
+  {
+    "key": "f8",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "f8",
+    "command": "-editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+f8",
+    "command": "editor.action.marker.prev",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+f8",
+    "command": "-editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+f8",
+    "command": "editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+alt+f8",
+    "command": "-editor.action.marker.prev",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k f",
+    "command": "-workbench.action.closeFolder",
+    "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+  },
+  {
+    "key": "ctrl+k f",
+    "command": "editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "-editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+w",
+    "command": "workbench.action.openWorkspace"
+  },
+  {
+    "key": "ctrl+shift+alt+o",
+    "command": "-workbench.action.terminal.chat.focusMostRecentChatTerminalOutput",
+    "when": "inChat"
+  },
 ]
