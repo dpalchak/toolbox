@@ -136,6 +136,7 @@
     "geminicodeassist.displayInlineContextHint": false,
     "geminicodeassist.enableTelemetry": false,
     "geminicodeassist.inlineSuggestions.nextEditPredictions": true,
+<<<<<<< Updated upstream
     "geminicodeassist.project": "aipp-internal-testing",
     "geminicodeassist.updateChannel": "Insiders",
     "git.countBadge": "off",
@@ -220,3 +221,9 @@
     "workbench.tree.indent": 16,
     "workbench.tree.renderIndentGuides": "always"
 }
+=======
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "geminicodeassist.displayInlineContextHint": false,
+    "geminicodeassist.inlineSuggestions.enableAuto": false
+}
+>>>>>>> Stashed changes

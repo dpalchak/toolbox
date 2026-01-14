@@ -105,7 +105,7 @@ title() {
 }
 
 codealias() {
-  local socket=$(echo /run/user/$UID/vscode-ipc-*.sock(=om[1]))
+  local socket=$(echo /run/user/$UID/vscode-ipc-*.sock(=om[1]N))
   if [[ -z ${socket} ]]; then
     return
   fi
