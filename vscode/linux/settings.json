@@ -1,9 +1,13 @@
 {
+    "[cpp]": {
+        "editor.defaultFormatter": "cider-team.vscode-ciderlsp"
+    },
+    "auto-comment-blocks.singleLineBlockOnEnter": true,
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 100, AllowShortBlocksOnASingleLine: \"Empty\", AllowShortFunctionsOnASingleLine: \"Empty\", AllowShortEnumsOnASingleLine: false, AllowShortIfStatementsOnASingleLine: \"Never\", AllowShortLoopsOnASingleLine: false, AccessModifierOffset: -4}",
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
     "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, ColumnLimit: 300, AllowShortBlocksOnASingleLine: \"Empty\", AllowShortFunctionsOnASingleLine: \"Empty\", AllowShortEnumsOnASingleLine: false, AllowShortIfStatementsOnASingleLine: \"Never\", AllowShortLoopsOnASingleLine: false, AccessModifierOffset: -4}",
-    "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.intelliSenseMode": "gcc-arm",
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.errorSquiggles": "Enabled",
@@ -15,13 +19,6 @@
     "C_Cpp.intelliSenseMemoryLimit": 8192,
     "C_Cpp.intelliSenseUpdateDelay": 1500,
     "C_Cpp.loggingLevel": "Debug",
-    "[cpp]": {
-        "editor.defaultFormatter": "cider-team.vscode-ciderlsp"
-    },
-    "auto-comment-blocks.singleLineBlockOnEnter": true,
-    "cSpell.allowCompoundWords": true,
-    "cSpell.diagnosticLevel": "Hint",
-    "cSpell.enabled": false,
     "ciderlsp.diagnostics.removeMessageRegex": "whitespace/end_of_line",
     "clangd.path": "/usr/bin/clangd",
     "clipboard-manager.maxClips": 25,
@@ -34,6 +31,9 @@
     ],
     "commit-message-editor.view.useMonospaceEditor": true,
     "cortex-debug.enableTelemetry": false,
+    "cSpell.allowCompoundWords": true,
+    "cSpell.diagnosticLevel": "Hint",
+    "cSpell.enabled": false,
     "debug.focusWindowOnBreak": false,
     "debug.toolBarLocation": "docked",
     "devicetree.defaultBoard": "matcha_ns",
@@ -135,9 +135,8 @@
     "files.trimTrailingWhitespace": true,
     "geminicodeassist.displayInlineContextHint": false,
     "geminicodeassist.enableTelemetry": false,
+    "geminicodeassist.inlineSuggestions.enableAuto": false,
     "geminicodeassist.inlineSuggestions.nextEditPredictions": true,
-<<<<<<< Updated upstream
-    "geminicodeassist.project": "aipp-internal-testing",
     "geminicodeassist.updateChannel": "Insiders",
     "git.countBadge": "off",
     "git.openRepositoryInParentFolders": "never",
@@ -160,14 +159,14 @@
     "scm.showIncomingChanges": "never",
     "scm.showOutgoingChanges": "never",
     "search.exclude": {
+        "**/__bvbe": true,
+        "**/.history": true,
+        "**/.venv": true,
         "**/*.code-search": true,
         "**/*.orig": true,
         "**/*.rst": true,
-        "**/.history": true,
-        "**/.venv": true,
-        "**/BUILD*": true,
-        "**/__bvbe": true,
         "**/bower_components": true,
+        "**/BUILD*": true,
         "**/estoppel": true,
         "**/node_modules": true,
         "**/prebuilt": true
@@ -178,6 +177,7 @@
     "tabnine.experimentalAutoImports": false,
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.fontFamily": "Courier New",
+    "testing.gutterEnabled": false,
     "testMate.cpp.log.logSentry": "disable_3",
     "testMate.cpp.log.userId": "d68eacf3c2366160bd4e10867160e205a8582935",
     "testMate.cpp.test.advancedExecutables": [
@@ -188,7 +188,6 @@
             "pattern": "${workspaceFolder}/firmware/app/libboosty_tests/BUILD.linux/boosty.elf"
         }
     ],
-    "testing.gutterEnabled": false,
     "update.mode": "manual",
     "update.showReleaseNotes": false,
     "window.confirmSaveUntitledWorkspace": false,
@@ -221,9 +220,3 @@
     "workbench.tree.indent": 16,
     "workbench.tree.renderIndentGuides": "always"
 }
-=======
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "geminicodeassist.displayInlineContextHint": false,
-    "geminicodeassist.inlineSuggestions.enableAuto": false
-}
->>>>>>> Stashed changes
