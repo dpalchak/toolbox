@@ -487,5 +487,14 @@ makework() {
   "${waymo_ws_root}/make_workspace.sh" "${ws_name}"
 }
 
+cider() {
+  dfile=$(grep -rlZ "Name=Cider" $HOME/.local/share/applications/* | xargs -0 ls -t | head -n 1)
+  if [[ -z "${dfile}" ]]; then
+    echo "Cider desktop file not found in ~/.local/share/applications."
+    return
+  fi
+  gtk-launch "$(basename "${dfile}")" &>/dev/null
+}
+
 
 alias blaze_trybuild='blaze build --features=-layering_check'
