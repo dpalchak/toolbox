@@ -1,0 +1,28 @@
+{
+	"name": "palchak",
+	"version": "0.0.1",
+	"displayName": "palchak-dark",
+	"description": "Customized Solarized dark theme for VS Code",
+	"publisher": "dpalchak",
+	"license": "MIT",
+	"keywords": [
+		"solarized",
+		"dark",
+		"dpalchak"
+	],
+	"engines": {
+		"vscode": "^1.20.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "palchak-dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/palchak-dark.color-theme.json"
+			}
+		]
+	}
+}
