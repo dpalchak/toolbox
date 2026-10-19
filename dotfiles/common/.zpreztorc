@@ -21,6 +21,9 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Zsh functions to load (man zshcontrib).
 # zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
+# Disable aliases to "safe" ops (e.g. rm -i, mv -i, etc)
+zstyle ':prezto:module:utility' safe-ops 'no'
+
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \

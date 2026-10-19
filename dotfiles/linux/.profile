@@ -27,3 +27,4 @@ if [ -n "$SSH_CONNECTION" ]; then
         PS1='${debian_chroot:+($debian_chroot)}\e[41m\[\033[1;37m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
+. "$HOME/.cargo/env"
