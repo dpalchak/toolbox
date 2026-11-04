@@ -44,3 +44,7 @@ if [[ -f ~/.venv/palchak/bin/activate ]]; then
 fi
 
 unset VIRTUAL_ENV_DISABLE_PROMPT
+
+if [[ -f "$IDF_PATH/export.sh" ]]; then
+	. "$IDF_PATH/export.sh" >/dev/null
+fi
