@@ -232,7 +232,7 @@
     "githubPullRequests.codingAgent.enabled": false,
     "githubPullRequests.codingAgent.autoCommitAndPush": false,
     "githubPullRequests.useReviewMode": "auto",
-    "containers.containerClient": "com.microsoft.visualstudio.containers.podman",
+    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.podmancompose",
     "protobuf.protoc.path": "protoc",
     "protobuf.buf.path": "/home/dpalchak/.config/Code/User/globalStorage/drblury.protobuf-vsc/bin/buf",
@@ -241,5 +241,11 @@
     "jira-plugin.numberOfIssuesInList": 300,
     "github.copilot.chat.claudeSonnet5Prompt.enabled": true,
     "github.copilot.chat.claudeOpus5Prompt.enabled": true,
-    "workbench.colorTheme": "palchak-dark"
+    "workbench.colorTheme": "palchak-dark",
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "githubPullRequests.ignoreSubmodules": true,
+    "git.detectSubmodulesLimit": 20,
+    "workbench.tree.enableStickyScroll": false,
+    "terminal.integrated.initialHint": false,
+    "dev.containers.gitCredentialHelperConfigLocation": "system"
 }
