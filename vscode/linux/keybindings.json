@@ -357,4 +357,13 @@
     "command": "-workbench.action.terminal.chat.focusMostRecentChatTerminalOutput",
     "when": "inChat"
   },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-claude-code-chat.openChat"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-clipboard-manager.editor.copyToHistory",
+    "when": "textInputFocus && !editorReadonly"
+  },
 ]
