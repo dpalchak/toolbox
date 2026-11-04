@@ -10,5 +10,10 @@ else
 fi
 
 LINK="ln -s -v -r -f -t"
+
+mkdir -p ${HOME}/.ssh
+$LINK ${HOME}/.ssh common/.ssh/*
+
 $LINK ${HOME} ${OS_DIR}/.z*
 $LINK ${HOME} common/.[a-zA-Z]*
+
