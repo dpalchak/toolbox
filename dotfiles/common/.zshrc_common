@@ -81,9 +81,6 @@ export ADB_VENDOR_KEYS="${HOME}/firmware/android/adb_keys"
 export MAKEFLAGS="-j"
 export CMAKE_GENERATOR="Ninja"
 
-export WAYMO_EMBEDDED_PATH="google3/waymo/embedded"
-export CAR_EMBEDDED_PATH="google3/third_party/car/embedded/"
-
 # Automatically run `ls` after changing a directory
 autoload add-zsh-hook
 launch_autols() {
@@ -141,8 +138,9 @@ alias ....="cd ../../.."
 alias cdlatest='cd *(/[-1])'
 
 
-alias garden="cd ~/projects/pointy/teagarden"
+alias garden="cd ~/projects/teagarden"
 alias waymod="cd ~/projects/waymo"
+alias skip="cd ~/projects/skip"
 alias njp="nrfjprog"
 
 # Change to the root directory of the current git repo
