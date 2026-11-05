@@ -241,7 +241,7 @@
     "jira-plugin.numberOfIssuesInList": 300,
     "github.copilot.chat.claudeSonnet5Prompt.enabled": true,
     "github.copilot.chat.claudeOpus5Prompt.enabled": true,
-    "workbench.colorTheme": "palchak-dark",
+    "workbench.colorTheme": "Solarized Dark",
     "githubPullRequests.ignoreSubmodules": true,
     "chat.titleBar.openInAgentsWindow.enabled": false,
     "git.detectSubmodulesLimit": 20,
