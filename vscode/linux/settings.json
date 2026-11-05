@@ -247,5 +247,9 @@
     "git.detectSubmodulesLimit": 20,
     "workbench.tree.enableStickyScroll": false,
     "terminal.integrated.initialHint": false,
-    "dev.containers.gitCredentialHelperConfigLocation": "system"
+    "dev.containers.gitCredentialHelperConfigLocation": "system",
+    "remote.autoForwardPortsSource": "hybrid",
+    "clangd.arguments": [
+        "--clang-tidy=false"
+    ]
 }
