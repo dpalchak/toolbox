@@ -1,0 +1,72 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Pick compile_commands.json file",
+            "type": "shell",
+            "command": "cp",
+            "args": [
+                "-f",
+                "${workspaceFolder}/${input:findCompileCommands}",
+                "${workspaceFolder}/firmware/.generated"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "close": true
+            },
+            "options": {
+                "statusbar": {
+                  "hide" : true
+                }
+            }
+        },
+        {
+            "label": "Restart clangd",
+            "type": "process",
+            "command": "${command:clangd.restart}",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "close": true
+            },
+            "options": {
+                "statusbar": {
+                  "hide" : true
+                }
+            }
+        },
+        {
+            "label": "Change clangd project",
+            "dependsOn": [
+                "Pick compile_commands.json file",
+                "Restart clangd"
+            ],
+            "dependsOrder": "sequence"
+        }
+
+    ],
+    "inputs": [
+        {
+            "id": "findCompileCommands",
+            "type": "command",
+            "command": "shellCommand.execute",
+            "args": {
+                "command": "find firmware/app -name 'compile_commands.json'",
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}

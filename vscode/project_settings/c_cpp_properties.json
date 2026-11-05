@@ -1,0 +1,156 @@
+{
+    "env": {
+        "commonDefines": [
+            "CATCH_CONFIG_PREFIX_ALL"
+        ],
+        "ncsDefines" : [
+            "BUILD_VERSION=BUILD_VERSION=v2.6.99-ncs1-1-6",
+            "KERNEL",
+            "_FORTIFY_SOURCE=2",
+            "__ZEPHYR__=1"
+        ],
+        "commonIncludePaths": [
+            "${workspaceFolder}/firmware/lib",
+            "${workspaceFolder}/firmware",
+            "${workspaceFolder}/third_party/catch2/src/",
+            "${workspaceFolder}/third_party/",
+            "${workspaceFolder}/third_party/nanopb/",
+            "${workspaceFolder}/third_party/wjwwood-serial/include/serial",
+            "${workspaceFolder}/firmware/.generated"
+        ],
+        "nrf91IncludePaths": [
+            "${workspaceFolder}/third_party/nordic/connect_sdk/zephyr/soc/arm/nordic_nrf/nrf91",
+            "${workspaceFolder}/third_party/nordic/connect_sdk/zephyr/modules/hal_nordic/nrfx",
+            "${workspaceFolder}/third_party/nordic/connect_sdk/modules/hal/nordic/nrfx",
+            "${workspaceFolder}/third_party/nordic/connect_sdk/modules/hal/nordic/**",
+            "${workspaceFolder}/third_party/nordic/connect_sdk/modules/hal/cmsis/CMSIS/Core/Include"
+        ],
+        "ncsIncludePaths": [
+            "${workspaceFolder}/third_party/nordic/connect_sdk",
+            "${workspaceFolder}/third_party/nordic/connect_sdk/zephyr/include",
+            "${workspaceFolder}/third_party/nordic/connect_sdk/zephyr/include/**",
+            "${workspaceFolder}/firmware/platform/common/zephyr/generated"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "Darwin",
+            "includePath": [
+                "${commonIncludePaths}"
+            ],
+            "defines": [
+                "${commonDefines}"
+            ],
+            "macFrameworkPath": [],
+            "compilerPath": "${workspaceFolder}/prebuilt/gcc-arm-none-eabi-10-2020-q4/darwin/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-arm",
+            "forcedInclude": [
+                "${workspaceFolder}/.vscode/c_cpp_undef.h"
+            ]
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${commonIncludePaths}"
+            ],
+            "defines": [
+                "${commonDefines}"
+            ],
+            "compilerPath": "${workspaceFolder}/prebuilt/gcc-arm-none-eabi-10-2020-q4/linux/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-arm",
+            "forcedInclude": [
+                "${workspaceFolder}/.vscode/c_cpp_undef.h"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ]
+            }
+        },
+        {
+            "name": "native_posix",
+            "includePath": [
+                "${workspaceFolder}/firmware/platform/common/zephyr/generated",
+                "${commonIncludePaths}",
+                "${ncsIncludePaths}"
+            ],
+            "defines": [
+                "${commonDefines}",
+                "${ncsDefines}"
+            ],
+            "compilerPath": "${workspaceFolder}/prebuilt/gcc-arm-none-eabi-10-2020-q4/linux/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-arm",
+            "forcedInclude": [
+                "${workspaceFolder}/.vscode/c_cpp_undef.h"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "matcha_ns",
+            "includePath": [
+                "${nrf91IncludePaths}",
+                "${commonIncludePaths}",
+                "${ncsIncludePaths}"
+            ],
+            "defines": [
+                "${commonDefines}",
+                "${ncsDefines}",
+                "NRF9160_XXAA=1",
+                "CONFIG_BOARD_MATCHA_NS=1"
+            ],
+            "compilerPath": "${workspaceFolder}/prebuilt/gcc-arm-none-eabi-10-2020-q4/linux/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-arm",
+            "forcedInclude": [
+                "${workspaceFolder}/.vscode/c_cpp_undef.h",
+                "${workspaceFolder}/firmware/app/matcha/BUILD/zephyr/include/generated/autoconf.h"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "nrf9160dk_nrf9160",
+            "includePath": [
+                "${nrf91IncludePaths}",
+                "${commonIncludePaths}",
+                "${ncsIncludePaths}"
+            ],
+            "defines": [
+                "${commonDefines}",
+                "${ncsDefines}",
+                "NRF9160_XXAA=1",
+                "CONFIG_BOARD_NRF9160DK_NRF9160=1"
+            ],
+            "compilerPath": "${workspaceFolder}/prebuilt/gcc-arm-none-eabi-10-2020-q4/linux/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-arm",
+            "forcedInclude": [
+                "${workspaceFolder}/.vscode/c_cpp_undef.h"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

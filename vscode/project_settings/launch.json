@@ -1,0 +1,231 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "blinky (nRF9160-DK)",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/firmware/app/blinky/BUILD/boosty.elf",
+            "servertype": "jlink",
+            "device": "nRF9160_xxAA",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            //"jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
+            "runToEntryPoint": "main",
+            "svdFile": "${workspaceRoot}/third_party//nordic/ncs_v1.6.1/modules/hal/nordic/nrfx/mdk/nrf9160.svd",
+            "gdbPath": "gdb-multiarch"
+            // "osx": {
+            //     "armToolchainPath": "${workspaceFolder}/estoppel/third_party/gcc-arm-none-eabi/darwin/latest/bin",
+            //     "serverpath": "${workspaceFolder}/estoppel/third_party/segger/jlink/darwin/latest/JLinkGDBServer",
+            // },
+            // "linux": {
+            //     "armToolchainPath": "${workspaceFolder}/estoppel/third_party/gcc-arm-none-eabi/linux/latest/bin",
+            //     "serverpath": "${workspaceFolder}/estoppel/third_party/segger/jlink/linux/latest/JLinkGDBServer",
+            // }
+        },
+        {
+            "type": "cortex-debug",
+            "request": "attach",
+            "name": "blinky (nRF9160-DK) [attach]",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/firmware/app/blinky/BUILD/boosty.elf",
+            "servertype": "jlink",
+            "device": "nRF9160_xxAA",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            //"jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
+            "svdFile": "${workspaceRoot}/third_party//nordic/ncs_v1.6.1/modules/hal/nordic/nrfx/mdk/nrf9160.svd",
+            "gdbPath": "gdb-multiarch"
+            // "osx": {
+            //     "armToolchainPath": "${workspaceFolder}/estoppel/third_party/gcc-arm-none-eabi/darwin/latest/bin",
+            //     "serverpath": "${workspaceFolder}/estoppel/third_party/segger/jlink/darwin/latest/JLinkGDBServer",
+            // },
+            // "linux": {
+            //     "armToolchainPath": "${workspaceFolder}/estoppel/third_party/gcc-arm-none-eabi/linux/latest/bin",
+            //     "serverpath": "${workspaceFolder}/estoppel/third_party/segger/jlink/linux/latest/JLinkGDBServer",
+            // }
+        },
+        // {
+        //     "name": "blinky (nRF9160-DK)",
+        //     "type": "cppdbg",
+        //     "request": "launch",
+        //     "cwd": "${workspaceRoot}",
+        //     "MIMode": "gdb",
+        //     "program": "${workspaceRoot}/firmware/app/blinky/BUILD/boosty.elf",
+        //     "debugServerPath": "JLinkGDBServer",
+        //     "debugServerArgs": "-device nRF9160_xxAA -if SWD -speed 5000",
+        //     "miDebuggerPath": "gdb-multiarch",
+        //     "targetArchitecture": "arm",
+        //     "stopAtEntry": true,
+        //     "customLaunchSetupCommands": [
+        //         { "text": "file ${workspaceRoot}/firmware/app/blinky/BUILD/boosty.elf"},
+        //         { "text": "target remote localhost:2331"},
+        //         { "text": "monitor reset"}
+        //     ]
+        // },
+        {
+            "name": "blinky (nRF52)",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "MIMode": "gdb",
+            "program": "${workspaceRoot}/firmware/app/blinky/BUILD/boosty.elf",
+            "debugServerPath": "JLinkGDBServer",
+            "debugServerArgs": "-device NRF52 -if SWD -speed 5000",
+            "miDebuggerPath": "gdb-multiarch",
+            "targetArchitecture": "arm",
+            "stopAtEntry": true,
+            "customLaunchSetupCommands": [
+                { "text": "file ${workspaceRoot}/firmware/app/blinky/BUILD/boosty.elf"},
+                { "text": "target remote localhost:2331"},
+                { "text": "monitor reset"}
+            ]
+        },
+        {
+            "name": "libboosty_tests (host)",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "MIMode": "gdb",
+            "program": "${workspaceRoot}/firmware/app/libboosty_tests/BUILD.linux/boosty.elf",
+            "stopAtEntry": true
+        },
+        {
+            "name": "oolong/oolong_tests (host)",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "MIMode": "gdb",
+            "program": "${workspaceRoot}/firmware/app/oolong/oolong_tests/BUILD.linux/boosty.elf",
+            "stopAtEntry": true
+        },
+        {
+            "name": "oolong/usb_decoder (host)",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceRoot}/firmware/app/oolong/usb_decoder",
+            "MIMode": "gdb",
+            "program": "${workspaceRoot}/firmware/app/oolong/usb_decoder/BUILD/usb_decoder.elf",
+            "args": [
+                "<",
+                "data/Oolong Capture, UART, Honeywell Xenon 1900.hex"
+            ],
+            "stopAtEntry": true
+        },
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "teabox (launch)",
+            "cwd": "${workspaceRoot}/firmware/app/teabox/BUILD.12",
+            "executable": "${workspaceRoot}/firmware/app/teabox/BUILD.12/teabox.elf",
+            "loadFiles": [
+                "${workspaceRoot}/firmware/app/teabox/BUILD.12/zephyr/merged.hex"
+            ],
+            "symbolFiles": [
+                "${workspaceRoot}/firmware/app/teabox/BUILD.12/b0/zephyr/zephyr.elf",
+                "${workspaceRoot}/firmware/app/teabox/BUILD.12/mcuboot/zephyr/zephyr.elf",
+                "${workspaceRoot}/firmware/app/teabox/BUILD.12/tfm/bin/tfm_s.elf",
+                "${workspaceRoot}/firmware/app/teabox/BUILD.12/tfm/bin/tfm_ns.elf",
+                "${workspaceRoot}/firmware/app/teabox/BUILD.12/teabox.elf",
+            ],
+            "servertype": "jlink",
+            "device": "nRF9160_xxAA",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            "svdFile": "${workspaceRoot}/third_party/nordic/connect_sdk/modules/hal/nordic/nrfx/mdk/nrf9160.svd",
+            "gdbPath": "gdb-multiarch"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "attach",
+            "name": "teabox (attach)",
+            "cwd": "${workspaceRoot}/firmware/app/teabox/BUILD.12",
+            "executable": "${workspaceRoot}/firmware/app/teabox/BUILD.12/teabox.elf",
+            // "symbolFiles": [
+            //     "${workspaceRoot}/firmware/app/teabox/BUILD.12/b0/zephyr/zephyr.elf",
+            //     "${workspaceRoot}/firmware/app/teabox/BUILD.12/mcuboot/zephyr/zephyr.elf",
+            //     "${workspaceRoot}/firmware/app/teabox/BUILD.12/tfm/bin/tfm_s.elf",
+            //     "${workspaceRoot}/firmware/app/teabox/BUILD.12/tfm/bin/tfm_ns.elf",
+            //     "${workspaceRoot}/firmware/app/teabox/BUILD.12/teabox.elf",
+            // ],
+            "servertype": "jlink",
+            "device": "nRF9160_xxAA",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            "svdFile": "${workspaceRoot}/third_party/nordic/connect_sdk/modules/hal/nordic/nrfx/mdk/nrf9160.svd",
+            "gdbPath": "gdb-multiarch",
+            // "showDevDebugOutput": "vscode"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "attach",
+            "name":  "factory_1.2.2-matcha_ns@1.2 (attach)",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/firmware/release/factory/1.2.2+0/matcha_ns@1.2.0/factory_1.2.2+0-matcha_ns@1.2.0-app.elf",
+            "servertype": "jlink",
+            "device": "nRF9160_xxAA",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            "preAttachCommands": [
+                "set substitute-path /usr/local/google/home/nicholasewalt/boosty /home/palchak/projects/pointy/boosty",
+            ],
+            "svdFile": "${workspaceRoot}/third_party/nordic/connect_sdk/modules/hal/nordic/nrfx/mdk/nrf9160.svd",
+            "gdbPath": "gdb-multiarch"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "attach",
+            "name": "usb_decoder (attach)",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/firmware/app/usb_decoder/BUILD.12/usb_decoder.elf",
+            "servertype": "jlink",
+            "device": "nRF9160_xxAA",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            "runToEntryPoint": "main",
+            // "stopAtEntry": true,
+            "svdFile": "${workspaceRoot}/third_party/nordic/connect_sdk/modules/hal/nordic/nrfx/mdk/nrf9160.svd",
+            "gdbPath": "gdb-multiarch"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "darjeeling (launch)",
+            "cwd": "${workspaceRoot}/firmware/app/darjeeling/BUILD/darjeeling",
+            "executable": "${workspaceRoot}/firmware/app/darjeeling/BUILD/darjeeling/darjeeling.elf",
+            "loadFiles": [
+                "${workspaceRoot}/firmware/app/darjeeling/BUILD/merged.hex"
+            ],
+            "symbolFiles": [
+                "${workspaceRoot}/firmware/app/darjeeling/BUILD/darjeeling/darjeeling.elf",
+            ],
+            "servertype": "jlink",
+            "device": "nRF54L15_M33",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            "svdFile": "${workspaceRoot}/third_party/nordic/connect_sdk/modules/hal/nordic/nrfx/mdk/nrf54l15_application.svd",
+            "gdbPath": "gdb-multiarch"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "attach",
+            "name": "darjeeling (attach)",
+            "cwd": "${workspaceRoot}/firmware/app/darjeeling/BUILD/darjeeling",
+            "executable": "${workspaceRoot}/firmware/app/darjeeling/BUILD/darjeeling/darjeeling.elf",
+            "symbolFiles": [
+                "${workspaceRoot}/firmware/app/darjeeling/BUILD/darjeeling/darjeeling.elf",
+            ],
+            "servertype": "jlink",
+            "device": "nRF54L15_M33",
+            "interface": "swd",
+            //"serialNumber": "679000005", //if you have more than one J-Link probe add the serial number here
+            "svdFile": "${workspaceRoot}/third_party/nordic/connect_sdk/modules/hal/nordic/nrfx/mdk/nrf54l15_application.svd",
+            "gdbPath": "gdb-multiarch"
+        },
+    ]
+}
